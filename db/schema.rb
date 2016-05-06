@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506172734) do
+ActiveRecord::Schema.define(version: 20160506173316) do
 
   create_table "acontecimentos", force: :cascade do |t|
     t.string   "titulo"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20160506172734) do
     t.integer  "numero_politicos"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "Partido"
+    t.integer  "legenda"
   end
 
   create_table "politicos", force: :cascade do |t|

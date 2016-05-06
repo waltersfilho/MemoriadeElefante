@@ -148,3 +148,523 @@ Migrating to AddLegendaToPartido (20160506173316)
             FROM sqlite_temp_master
             WHERE name='index_politicos_on_partido_id' AND type='index'
 
+
+
+Started GET "/partidos" for 10.0.2.2 at 2016-05-06 14:34:35 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PartidosController#index as HTML
+  [1m[35mPartido Load (1.9ms)[0m  SELECT "partidos".* FROM "partidos"
+  Rendered partidos/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 801ms (Views: 755.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 10.0.2.2 at 2016-05-06 14:34:37 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-59bc28a6bb45b9d7f08f867c8352d28378580dbacc4f6f3421eb160bc31b6f9c.css?body=1" for 10.0.2.2 at 2016-05-06 14:34:37 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/politicos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:34:37 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/partidos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:34:37 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/acontecimentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:34:37 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 10.0.2.2 at 2016-05-06 14:34:37 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 10.0.2.2 at 2016-05-06 14:34:37 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 10.0.2.2 at 2016-05-06 14:34:37 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/acontecimentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:34:37 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/partidos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:34:38 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/politicos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:34:38 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 10.0.2.2 at 2016-05-06 14:34:38 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/partidos/new" for 10.0.2.2 at 2016-05-06 14:34:55 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PartidosController#new as HTML
+  Rendered partidos/_form.html.erb (77.4ms)
+  Rendered partidos/new.html.erb within layouts/application (109.6ms)
+Completed 200 OK in 324ms (Views: 301.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/partidos" for 10.0.2.2 at 2016-05-06 14:34:58 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PartidosController#index as HTML
+  [1m[36mPartido Load (1.4ms)[0m  [1mSELECT "partidos".* FROM "partidos"[0m
+  Rendered partidos/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 166ms (Views: 164.0ms | ActiveRecord: 1.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemovePartidoFromPartidos (20160506174037)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (32.3ms)[0m  [1mCREATE TEMPORARY TABLE "apartidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "descricao" varchar, "sigla" varchar, "numero_politicos" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "Partido" varchar, "legenda" integer) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "partidos"
+  [1m[36m (2.9ms)[0m  [1mDROP TABLE "partidos"[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "partidos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "descricao" varchar, "sigla" varchar, "numero_politicos" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "legenda" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "apartidos"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "apartidos"
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160506174037"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_politicos_on_partido_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_politicos_on_partido_id' AND type='index'
+
+
+
+Started GET "/partidos" for 10.0.2.2 at 2016-05-06 14:41:42 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PartidosController#index as HTML
+  [1m[35mPartido Load (1.4ms)[0m  SELECT "partidos".* FROM "partidos"
+  Rendered partidos/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 671ms (Views: 633.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/acontecimentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:41:44 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/partidos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:41:44 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 10.0.2.2 at 2016-05-06 14:41:44 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-59bc28a6bb45b9d7f08f867c8352d28378580dbacc4f6f3421eb160bc31b6f9c.css?body=1" for 10.0.2.2 at 2016-05-06 14:41:44 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/politicos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:41:44 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 10.0.2.2 at 2016-05-06 14:41:44 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 10.0.2.2 at 2016-05-06 14:41:44 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 10.0.2.2 at 2016-05-06 14:41:44 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/acontecimentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:41:44 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/partidos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:41:44 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/politicos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:41:44 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 10.0.2.2 at 2016-05-06 14:41:44 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/partidos/new" for 10.0.2.2 at 2016-05-06 14:41:49 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PartidosController#new as HTML
+  Rendered partidos/_form.html.erb (81.3ms)
+  Rendered partidos/new.html.erb within layouts/application (115.5ms)
+Completed 200 OK in 340ms (Views: 303.3ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/partidos/new" for 10.0.2.2 at 2016-05-06 14:43:55 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PartidosController#new as HTML
+  Rendered partidos/_form.html.erb (8.0ms)
+  Rendered partidos/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 242ms (Views: 199.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/partidos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:43:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 10.0.2.2 at 2016-05-06 14:43:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-59bc28a6bb45b9d7f08f867c8352d28378580dbacc4f6f3421eb160bc31b6f9c.css?body=1" for 10.0.2.2 at 2016-05-06 14:43:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/politicos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:43:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 10.0.2.2 at 2016-05-06 14:43:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/acontecimentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:43:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 10.0.2.2 at 2016-05-06 14:43:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 10.0.2.2 at 2016-05-06 14:43:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/acontecimentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:43:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/partidos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:43:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/politicos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:43:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 10.0.2.2 at 2016-05-06 14:43:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/partidos" for 10.0.2.2 at 2016-05-06 14:44:08 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PartidosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w3pWZEmEK8Cnde9ARXolQDhCLBmW5gs4BHsNLxu0DlVxoe6TSikhnm7GGc6HVhQnAZdA2Lsdml0aWfsOG7SLjA==", "partido"=>{"nome"=>"Partido dos Trabalhadores", "descricao"=>"Partido fundado por trabalhadores de siderurgicas", "sigla"=>"PT", "numero_politicos"=>"12", "legenda"=>"13"}, "commit"=>"Create Partido"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.5ms)[0m  INSERT INTO "partidos" ("nome", "descricao", "sigla", "numero_politicos", "legenda", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["nome", "Partido dos Trabalhadores"], ["descricao", "Partido fundado por trabalhadores de siderurgicas"], ["sigla", "PT"], ["numero_politicos", 12], ["legenda", 13], ["created_at", "2016-05-06 17:44:08.393025"], ["updated_at", "2016-05-06 17:44:08.393025"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/partidos/1
+Completed 302 Found in 32ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/partidos/1" for 10.0.2.2 at 2016-05-06 14:44:08 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PartidosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPartido Load (2.2ms)[0m  SELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered partidos/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 240ms (Views: 208.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/partidos" for 10.0.2.2 at 2016-05-06 14:44:33 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PartidosController#index as HTML
+  [1m[36mPartido Load (2.2ms)[0m  [1mSELECT "partidos".* FROM "partidos"[0m
+  Rendered partidos/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 163ms (Views: 158.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/partidos" for 10.0.2.2 at 2016-05-06 14:44:55 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PartidosController#index as HTML
+  [1m[35mPartido Load (1.2ms)[0m  SELECT "partidos".* FROM "partidos"
+  Rendered partidos/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 180ms (Views: 177.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/politicos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:44:55 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-59bc28a6bb45b9d7f08f867c8352d28378580dbacc4f6f3421eb160bc31b6f9c.css?body=1" for 10.0.2.2 at 2016-05-06 14:44:55 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 10.0.2.2 at 2016-05-06 14:44:55 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/partidos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:44:55 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 10.0.2.2 at 2016-05-06 14:44:55 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/acontecimentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:44:55 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 10.0.2.2 at 2016-05-06 14:44:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 10.0.2.2 at 2016-05-06 14:44:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/acontecimentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:44:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/partidos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:44:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/politicos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:44:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 10.0.2.2 at 2016-05-06 14:44:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/partidos" for 10.0.2.2 at 2016-05-06 14:45:31 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PartidosController#index as HTML
+  [1m[36mPartido Load (2.3ms)[0m  [1mSELECT "partidos".* FROM "partidos"[0m
+  Rendered partidos/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 165ms (Views: 161.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/partidos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:45:31 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/politicos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:45:31 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-59bc28a6bb45b9d7f08f867c8352d28378580dbacc4f6f3421eb160bc31b6f9c.css?body=1" for 10.0.2.2 at 2016-05-06 14:45:31 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 10.0.2.2 at 2016-05-06 14:45:31 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 10.0.2.2 at 2016-05-06 14:45:31 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/acontecimentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:45:31 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 10.0.2.2 at 2016-05-06 14:45:31 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 10.0.2.2 at 2016-05-06 14:45:31 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/acontecimentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:45:31 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/partidos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:45:32 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/politicos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:45:32 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 10.0.2.2 at 2016-05-06 14:45:32 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/politicos" for 10.0.2.2 at 2016-05-06 14:46:12 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PoliticosController#index as HTML
+  [1m[35mPolitico Load (1.1ms)[0m  SELECT "politicos".* FROM "politicos"
+  Rendered politicos/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 182ms (Views: 152.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/politicos/new" for 10.0.2.2 at 2016-05-06 14:46:13 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PoliticosController#new as HTML
+  Rendered politicos/_form.html.erb (7.9ms)
+  Rendered politicos/new.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 199ms (Views: 186.0ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/politicos" for 10.0.2.2 at 2016-05-06 14:46:48 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PoliticosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CCWCnc+6T641N0KA70HHdpgjTZR+NOuExGKCDMKBxpe6/jpqzBdF8PyEtA4tbfYRofYhVVPPeuHaQHQtwoFDTg==", "politico"=>{"nome"=>"Dilma Rousseff", "idade"=>"60", "estado"=>"Rio Grande do Sul", "cidade"=>"Gramado", "municipio"=>"Gramado", "partido_id"=>"1", "cargo_eleito"=>"Presidente", "cargo_atual"=>"Presidente", "status"=>"Governando"}, "commit"=>"Create Politico"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.8ms)[0m  INSERT INTO "politicos" ("nome", "idade", "estado", "cidade", "municipio", "partido_id", "cargo_eleito", "cargo_atual", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["nome", "Dilma Rousseff"], ["idade", 60], ["estado", "Rio Grande do Sul"], ["cidade", "Gramado"], ["municipio", "Gramado"], ["partido_id", 1], ["cargo_eleito", "Presidente"], ["cargo_atual", "Presidente"], ["status", "Governando"], ["created_at", "2016-05-06 17:46:48.465602"], ["updated_at", "2016-05-06 17:46:48.465602"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/politicos/1
+Completed 302 Found in 16ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/politicos/1" for 10.0.2.2 at 2016-05-06 14:46:48 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PoliticosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPolitico Load (1.4ms)[0m  SELECT  "politicos".* FROM "politicos" WHERE "politicos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPartido Load (2.0ms)[0m  [1mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered politicos/show.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 221ms (Views: 215.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/politicos" for 10.0.2.2 at 2016-05-06 14:46:51 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PoliticosController#index as HTML
+  [1m[35mPolitico Load (1.3ms)[0m  SELECT "politicos".* FROM "politicos"
+  [1m[36mPartido Load (1.3ms)[0m  [1mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered politicos/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 180ms (Views: 175.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/politicos" for 10.0.2.2 at 2016-05-06 14:47:46 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PoliticosController#index as HTML
+  [1m[35mPolitico Load (5.8ms)[0m  SELECT "politicos".* FROM "politicos"
+  [1m[36mPartido Load (1.4ms)[0m  [1mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered politicos/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 177ms (Views: 169.3ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/assets/partidos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:47:46 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 10.0.2.2 at 2016-05-06 14:47:46 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-59bc28a6bb45b9d7f08f867c8352d28378580dbacc4f6f3421eb160bc31b6f9c.css?body=1" for 10.0.2.2 at 2016-05-06 14:47:46 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/politicos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:47:46 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 10.0.2.2 at 2016-05-06 14:47:46 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/acontecimentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-05-06 14:47:46 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 10.0.2.2 at 2016-05-06 14:47:46 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 10.0.2.2 at 2016-05-06 14:47:47 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/acontecimentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:47:47 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/partidos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:47:47 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/politicos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-05-06 14:47:47 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 10.0.2.2 at 2016-05-06 14:47:47 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/politicos/1" for 10.0.2.2 at 2016-05-06 14:47:54 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PoliticosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPolitico Load (1.4ms)[0m  SELECT  "politicos".* FROM "politicos" WHERE "politicos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPartido Load (1.7ms)[0m  [1mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered politicos/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 163ms (Views: 157.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/politicos" for 10.0.2.2 at 2016-05-06 14:47:56 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PoliticosController#index as HTML
+  [1m[35mPolitico Load (1.2ms)[0m  SELECT "politicos".* FROM "politicos"
+  [1m[36mPartido Load (1.2ms)[0m  [1mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered politicos/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 174ms (Views: 170.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/acontecimentos" for 10.0.2.2 at 2016-05-06 14:48:02 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AcontecimentosController#index as HTML
+  [1m[35mAcontecimento Load (1.3ms)[0m  SELECT "acontecimentos".* FROM "acontecimentos"
+  Rendered acontecimentos/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 189ms (Views: 170.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/acontecimentos/new" for 10.0.2.2 at 2016-05-06 14:48:06 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AcontecimentosController#new as HTML
+  Rendered acontecimentos/_form.html.erb (4.4ms)
+  Rendered acontecimentos/new.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 187ms (Views: 177.7ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/acontecimentos" for 10.0.2.2 at 2016-05-06 14:48:37 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AcontecimentosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/Y2+7imU6PqW6xvad+0rFU+X5NbGv0yTE/rgsI/n1N1PVgYZKjnipF9Y7VS1wRpydkKIF+tE3fYN2BaRj+dRBA==", "acontecimento"=>{"titulo"=>"Impeachment", "descricao"=>"Dilma sofre impedimento", "link"=>"www.g1.com.br"}, "commit"=>"Create Acontecimento"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.4ms)[0m  INSERT INTO "acontecimentos" ("titulo", "descricao", "link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["titulo", "Impeachment"], ["descricao", "Dilma sofre impedimento"], ["link", "www.g1.com.br"], ["created_at", "2016-05-06 17:48:37.589068"], ["updated_at", "2016-05-06 17:48:37.589068"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/acontecimentos/1
+Completed 302 Found in 15ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/acontecimentos/1" for 10.0.2.2 at 2016-05-06 14:48:37 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AcontecimentosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAcontecimento Load (1.6ms)[0m  SELECT  "acontecimentos".* FROM "acontecimentos" WHERE "acontecimentos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered acontecimentos/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 170ms (Views: 164.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/acontecimentos" for 10.0.2.2 at 2016-05-06 14:48:39 -0300
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AcontecimentosController#index as HTML
+  [1m[36mAcontecimento Load (2.4ms)[0m  [1mSELECT "acontecimentos".* FROM "acontecimentos"[0m
+  Rendered acontecimentos/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 165ms (Views: 161.3ms | ActiveRecord: 2.4ms)

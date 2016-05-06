@@ -5,8 +5,73 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="assets/stylesheets/bootstrap.min.css" />
+  <!-- Icons/FontAwesome -->
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <!-- totop -->
+  <link rel="stylesheet" href="css/ui.totop.css" />
+  <!-- owl carusol -->
+  <link rel="stylesheet" href="css/owl.carousel.css" />
+  <!-- zetta menu -->
+  <link rel="stylesheet" href="css/zetta-menu.min.css" />
+  <!-- layerSlider -->
+  <link rel="stylesheet" href="css/layerslider.css" />
+  <!-- Animation -->
+  <link rel="stylesheet" href="css/animate.css" />
+  <!-- cubeportfolio -->
+  <link rel="stylesheet" href="css/cubeportfolio.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+
+  <!-- Customizable CSS -->
+  <link rel="stylesheet" href="assets/stylesheets/style.css" />
+
+  <!-- FONTS -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/favicon.ico">
 </head>
 <body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <!-- Zetta Menu -->
+    <ul id="nav" onClick="" class="zetta-menu zm-response-switch zm-full-width zm-effect-slide-top">
+      <!-- LOGO -->
+      <li class="zm-logo">
+        <a href="#onepage"><img src="assets/images/logotipo.png" alt="piksell logo" /></a>
+      </li>
+      <!-- end LOGO -->
+
+      <!-- Home Menu -->
+
+      <li class="nav"><a href="mapa.html" data-scroll="services">Mapa Político</a></li>
+
+      <li class=><a>Cargos</a>
+        <ul class="w-200">
+          <li class="zm-active"><a href="#">Presidente</a></li>
+          <li><a href="#">Governadores</a></li>
+          <li><a href="#">Prefeitos</a></li>
+          <li><a href="#">Deputados Federais</a></li>
+          <li><a href="#">Senadores</a></li>
+          <li><a href="#">Deputados Estaduais</a></li>
+          <li><a href="#">Vereadores</a></li>
+
+        </ul>
+      </li>
+      <!-- /Home Menu -->
+
+      <li class="nav"><a href="#" data-scroll="services">Partidos</a></li>
+      <li class="nav"><a href="#" data-scroll="contact">Login</a></li>
+
+
+    </ul>
+    <!-- /Zetta Menu 1 -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- end nav -->
 
 <%= yield %>
 

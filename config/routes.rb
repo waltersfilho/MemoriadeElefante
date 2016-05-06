@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  root to: "politicos#home"
   resources :acontecimentos
   resources :politicos
   resources :partidos
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

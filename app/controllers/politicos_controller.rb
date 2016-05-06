@@ -1,6 +1,10 @@
 class PoliticosController < ApplicationController
   before_action :set_politico, only: [:show, :edit, :update, :destroy]
 
+  def home
+    render :layout => 'landing'
+  end
+
   # GET /politicos
   # GET /politicos.json
   def index

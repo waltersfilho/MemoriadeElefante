@@ -1,0 +1,53 @@
+<%= form_for(@politico) do |f| %>
+  <% if @politico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@politico.errors.count, "error") %> prohibited this politico from being saved:</h2>
+
+      <ul>
+      <% @politico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :idade %><br>
+    <%= f.number_field :idade %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.text_field :estado %>
+  </div>
+  <div class="field">
+    <%= f.label :cidade %><br>
+    <%= f.text_field :cidade %>
+  </div>
+  <div class="field">
+    <%= f.label :municipio %><br>
+    <%= f.text_field :municipio %>
+  </div>
+  <div class="field">
+    <%= f.label :partido_id %><br>
+    <%= f.text_field :partido_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cargo_eleito %><br>
+    <%= f.text_field :cargo_eleito %>
+  </div>
+  <div class="field">
+    <%= f.label :cargo_atual %><br>
+    <%= f.text_field :cargo_atual %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

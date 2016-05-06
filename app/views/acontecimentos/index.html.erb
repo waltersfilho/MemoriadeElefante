@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Acontecimentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Descricao</th>
+      <th>Link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @acontecimentos.each do |acontecimento| %>
+      <tr>
+        <td><%= acontecimento.titulo %></td>
+        <td><%= acontecimento.descricao %></td>
+        <td><%= acontecimento.link %></td>
+        <td><%= link_to 'Show', acontecimento %></td>
+        <td><%= link_to 'Edit', edit_acontecimento_path(acontecimento) %></td>
+        <td><%= link_to 'Destroy', acontecimento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Acontecimento', new_acontecimento_path %>

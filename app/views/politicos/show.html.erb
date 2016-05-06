@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @politico.nome %>
+</p>
+
+<p>
+  <strong>Idade:</strong>
+  <%= @politico.idade %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @politico.estado %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @politico.cidade %>
+</p>
+
+<p>
+  <strong>Municipio:</strong>
+  <%= @politico.municipio %>
+</p>
+
+<p>
+  <strong>Partido:</strong>
+  <%= @politico.partido %>
+</p>
+
+<p>
+  <strong>Cargo eleito:</strong>
+  <%= @politico.cargo_eleito %>
+</p>
+
+<p>
+  <strong>Cargo atual:</strong>
+  <%= @politico.cargo_atual %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @politico.status %>
+</p>
+
+<%= link_to 'Edit', edit_politico_path(@politico) %> |
+<%= link_to 'Back', politicos_path %>

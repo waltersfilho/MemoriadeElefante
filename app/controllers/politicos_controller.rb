@@ -5,6 +5,10 @@ class PoliticosController < ApplicationController
     render :layout => 'landing'
   end
 
+  def mapa
+
+  end
+
   # GET /politicos
   # GET /politicos.json
   def index

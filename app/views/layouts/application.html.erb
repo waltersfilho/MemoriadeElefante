@@ -39,7 +39,7 @@
     <ul id="nav" onClick="" class="zetta-menu zm-response-switch zm-full-width zm-effect-slide-top">
       <!-- LOGO -->
       <li class="zm-logo">
-        <a href="#onepage"><img src="assets/images/logotipo.png" alt="piksell logo" /></a>
+        <a href="#onepage"><%= image_tag "logotipo.png" %> </a>
       </li>
       <!-- end LOGO -->
 
@@ -72,6 +72,24 @@
 <!-- end nav -->
 
 <%= yield %>
+
+<!-- footer -->
+<footer class="dark content">
+  <div class="container text-center">
+    <div class="row">
+      <div class="margin-top-20 margin-bottom-20">
+        <a href="#" class="social-icon-jump-x4 circle">
+          <div>
+            <i class="fa fa-facebook facebook-icon-jump"></i>
+            <i class="fa fa-facebook social-icon-jump-dark"></i>
+          </div>
+        </a>
+
+      </div>
+      <p>2016 &copy; Todos os direitos reservados para Memória de Elefante.</p>
+    </div><!-- end row -->
+  </div><!-- end container -->
+</footer>
 
 </body>
 </html>

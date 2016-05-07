@@ -6,7 +6,7 @@ class PoliticosController < ApplicationController
   end
 
   def mapa
-
+    render "mapa"
   end
 
   # GET /politicos

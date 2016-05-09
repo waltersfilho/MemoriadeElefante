@@ -63,13 +63,22 @@
       <!-- /Home Menu -->
 
       <li class="nav"><a href="#" data-scroll="services">Partidos</a></li>
-      <li class="nav"><a href="#" data-scroll="contact">Login</a></li>
+      <% if user_signed_in? %>
+        <li class="nav"><%= link_to 'Editar', edit_user_registration_path %> </li>
+        <li class="nav"><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+        <li class="nav"><%= link_to 'Login', new_user_session_path %></li>
+      <%end%>
 
 
     </ul>
     <!-- /Zetta Menu 1 -->
   </div><!-- /.container-fluid -->
 </nav>
+
+  <% flash.each do |name, msg| %>
+  <%= content_tag(:div, msg, class: "alert alert-info") %>
+  <% end %>
 <!-- end nav -->
 
 <%= yield %>

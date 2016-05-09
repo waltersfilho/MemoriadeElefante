@@ -1,5 +1,37 @@
 <p id="notice"><%= notice %></p>
 
+<section class="content">
+    	<div class="container">
+        	<div class="row">
+            	<div class="col-sm-12 col-md-5 padd">
+                    <div class="owl-carousel owl-item-1">
+
+                        <div class="item">
+                            <img src="img/governadores/pezao.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="img/governadores/pezao2.jpg" alt="">
+                        </div>
+
+                    </div><!-- end owl-item-1 -->
+                </div>
+                
+                <div class="col-sm-12 col-md-7 padd">
+                	<h5><%= @politico.nome %></h5>
+                    <div class="line-left"></div>
+                    <em>Vice: Francisco Dornelles</em>
+					<p>É um político brasileiro filiado ao PMDB, atual governador do Estado do Rio de Janeiro.[1] Pezão foi diagnosticado com linfoma não-hodgkin em 24 de março de 2016, um tipo de câncer raro que atinge o tecido ósseo.</p>
+                    <ul class="list3">
+                        <li class="wow fadeInDown" data-wow-duration="1s"><i class="fa fa-check"></i>62º Governador do Rio de Janeiro</li>
+                        <li class="wow fadeInDown" data-wow-duration="2s"><i class="fa fa-check"></i>Vice-governador do Rio de Janeiro</li>
+                        <li class="wow fadeInDown" data-wow-duration="3s"><i class="fa fa-check"></i>Secretário Estadual de Obras do Rio de Janeiro</li>
+                    </ul>
+                </div>
+                
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section>
+
 <p>
   <strong>Nome:</strong>
   <%= @politico.nome %>

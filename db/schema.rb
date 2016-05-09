@@ -11,14 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160509213158) do
+ActiveRecord::Schema.define(version: 20160509214315) do
 
   create_table "acontecimentos", force: :cascade do |t|
     t.string   "titulo"
     t.string   "descricao"
     t.string   "link"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "partidos", force: :cascade do |t|
@@ -26,9 +30,13 @@ ActiveRecord::Schema.define(version: 20160509213158) do
     t.string   "descricao"
     t.string   "sigla"
     t.integer  "numero_politicos"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "legenda"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "politicos", force: :cascade do |t|
@@ -41,8 +49,12 @@ ActiveRecord::Schema.define(version: 20160509213158) do
     t.string   "cargo_eleito"
     t.string   "cargo_atual"
     t.string   "status"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "politicos", ["partido_id"], name: "index_politicos_on_partido_id"
@@ -63,6 +75,10 @@ ActiveRecord::Schema.define(version: 20160509213158) do
     t.string   "provider"
     t.string   "uid"
     t.boolean  "admin"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

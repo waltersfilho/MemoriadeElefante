@@ -1,11 +1,19 @@
 class AcontecimentosController < ApplicationController
-  before_action :set_acontecimento, only: [:show, :edit, :update, :destroy]
+  before_action :set_acontecimento, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   # GET /acontecimentos
   # GET /acontecimentos.json
   def index
     @acontecimentos = Acontecimento.all
   end
+  
+  def upvote
+    @post.upvote_by current_user
+    redirect_to :back
+  end
+  def downvote
+    @post.downvote_from current_user
+    redirect_to :back
 
   # GET /acontecimentos/1
   # GET /acontecimentos/1.json

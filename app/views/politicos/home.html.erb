@@ -48,6 +48,9 @@
 
       <li class="nav"><a href="#" data-scroll="services">Partidos</a></li>
       <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <li class="nav zm-right-item"><%= link_to "Admin Panel", rails_admin_path %></li>
+        <% end %>
         <li class="round-image-50 zm-right-item"><%= image_tag(avatar_url(current_user))%>
         <li class="nav zm-right-item"><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
         <li class="nav zm-right-item"><%= link_to 'Editar', edit_user_registration_path %> </li>
@@ -86,7 +89,7 @@
 <!-- end about us -->
 
 <!-- about us image parallax -->
-<section class="content section-parallax parallaxBg-2" style="background-image: url(assets/images/team-smiling.jpg); height: 400px;"></section>
+<section class="content section-parallax parallaxBg-2" style="background-image: url(img/team-smiling.jpg); height: 400px;"></section>
 <!-- end about us image parallax -->
 
 

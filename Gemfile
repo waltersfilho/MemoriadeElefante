@@ -24,6 +24,12 @@ gem 'font-awesome-sass'
 #Gem de autenticacao
   gem 'devise'
   
+# Gem de Like/Dislike
+gem 'acts_as_votable', '~> 0.10.0'
+
+#Gems do Rails Admin
+gem 'rails_admin'
+  
   #Gems do Omniauth
 gem 'omniauth'
 gem 'omniauth-facebook'

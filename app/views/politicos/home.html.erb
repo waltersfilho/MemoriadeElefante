@@ -48,10 +48,11 @@
 
       <li class="nav"><a href="#" data-scroll="services">Partidos</a></li>
       <% if user_signed_in? %>
-        <li class="nav"><%= link_to 'Editar', edit_user_registration_path %> </li>
-        <li class="nav"><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
+        <li class="round-image-50 zm-right-item"><%= image_tag(avatar_url(current_user))%>
+        <li class="nav zm-right-item"><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
+        <li class="nav zm-right-item"><%= link_to 'Editar', edit_user_registration_path %> </li>
       <% else %>
-        <li class="nav"><%= link_to 'Login', new_user_session_path %></li>
+        <li class="nav zm-right-item"><%= link_to 'Login', new_user_session_path %></li>
       <%end%>
 
 

@@ -33,10 +33,10 @@
       <% @partidos.each do |partido| %>
           <tr>
             <td><%= link_to image_tag(partido.photo.url(:thumb)), partido %></td>
-            <td><h3><%= partido.descricao %></h3></td>
-            <td><h3><%= partido.sigla %></h3></td>
-            <td><h3><%= partido.numero_politicos %></h3></td>
-            <td><h3><%= partido.legenda %></h3></td>
+            <td><h4><%= partido.descricao %></h4></td>
+            <td><h4><%= partido.sigla %></h4></td>
+            <td><h4><%= partido.numero_politicos %></h4></td>
+            <td><h4><%= partido.legenda %></h4></td>
           </tr>
       <% end %>
       </tbody>

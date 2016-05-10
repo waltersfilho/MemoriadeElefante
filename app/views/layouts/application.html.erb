@@ -45,7 +45,7 @@
 
       <!-- Home Menu -->
 
-      <li class="nav"><a href="mapa.html" data-scroll="services">Mapa Político</a></li>
+      <li class="nav"><%= link_to 'Mapa Político', mapa_path %></li>
 
       <li class=><a>Cargos</a>
         <ul class="w-200">
@@ -61,7 +61,8 @@
       </li>
       <!-- /Home Menu -->
 
-      <li class="nav"><a href="#" data-scroll="services">Partidos</a></li>
+      <li class="nav"><%= link_to 'Partidos', partidos_path %></li>
+
       <% if user_signed_in? %>
         <% if current_user.admin? %>
           <li class="nav zm-right-item"><%= link_to "Admin Panel", rails_admin_path %></li>

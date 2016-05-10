@@ -31,6 +31,15 @@
       <%= f.label :legenda%><br>
       <%= f.number_field :legenda %>
   </div>
+    <div class="field">
+      <%= f.label "Foto" %><br>
+      <%= f.file_field :photo, class: "form-control" %>
+    </div>
+    <div class="btn-group" role="group" aria-label="...">
+      <%= button_tag(type: "submit", class: "btn btn-default btn-primary", name: "commit", value: "conceal") do %>
+          Salvar
+      <%end%>
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -29,8 +29,8 @@ gem 'acts_as_votable', '~> 0.10.0'
 
 #Gems do Rails Admin
 gem 'rails_admin'
-  
-  #Gems do Omniauth
+
+#Gems do Omniauth
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'

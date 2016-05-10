@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"  }
+  devise_for :users, :controllers => { omniauth_callbacks: "users/omniauth_callbacks" }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: "politicos#home"
   resources :acontecimentos do
@@ -8,7 +8,9 @@ Rails.application.routes.draw do
       put "dislike", to: "acontecimentos#downvote"
     end
   end
-  resources :politicos
+  resources :politicos do
+    resources :acontecimentos
+  end
   resources :partidos
 
   get 'mapa'=> 'politicos#mapa'

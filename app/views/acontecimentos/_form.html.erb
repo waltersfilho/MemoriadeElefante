@@ -1,15 +1,4 @@
-<%= form_for(@acontecimento) do |f| %>
-  <% if @acontecimento.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@acontecimento.errors.count, "error") %> prohibited this acontecimento from being saved:</h2>
-
-      <ul>
-      <% @acontecimento.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for([@politico, @politico.acontecimentos.build]) do |f| %>
 
   <div class="field">
     <%= f.label :titulo %><br>

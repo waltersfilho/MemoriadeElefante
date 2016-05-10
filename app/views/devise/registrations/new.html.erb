@@ -26,12 +26,10 @@
                         	<span class="input-group-addon"><i class="fa fa-lock"></i></span>
                         	<%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Confirme sua Senha" %>
                         </div>
-                        
-                        <div class="input-group">
-                          <span class="input-group-addon"><i class="fa fa-picture-o"></i></span>
-                          <%= button_tag(type: "submit", class: "btn btn-default btn-primary", name: "commit", value: "conceal") do %>
-                            Salvar
-                          <% end %>
+
+                        <div class="field">
+                          <%= f.label "Foto de perfil" %><br>
+                          <%= f.file_field :photo, class: "form-control" %>
                         </div>
                         
                         <%= f.submit "Sign up", class:"btn btn-lg pi-btn-default rounded" %>

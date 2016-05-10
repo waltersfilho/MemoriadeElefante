@@ -32,7 +32,10 @@ class AcontecimentosController < ApplicationController
   # POST /acontecimentos
   # POST /acontecimentos.json
   def create
-    @acontecimento = Acontecimento.new(acontecimento_params)
+    #Construção de um comentário dentro do post.
+    @acontecimento = @politico.acontecimento.build(acontecimento_params)
+    @acontecimento.save
+    redirect_to @politico
 
     respond_to do |format|
       if @acontecimento.save
@@ -62,7 +65,10 @@ class AcontecimentosController < ApplicationController
   # DELETE /acontecimentos/1
   # DELETE /acontecimentos/1.json
   def destroy
+    #Encontrando um comentário dentro do post.
+    @acontecimento = @politico.comments.find(params[:id])
     @acontecimento.destroy
+    redirect_to @politico
     respond_to do |format|
       format.html { redirect_to acontecimentos_url, notice: 'Acontecimento was successfully destroyed.' }
       format.json { head :no_content }
@@ -72,11 +78,12 @@ class AcontecimentosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_acontecimento
-      @acontecimento = Acontecimento.find(params[:id])
+      @politico = Politico.find(params[:politico_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def acontecimento_params
       params.require(:acontecimento).permit(:titulo, :descricao, :link, :photo)
     end
+  end
 end

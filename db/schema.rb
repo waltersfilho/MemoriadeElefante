@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20160509214315) do
     t.string   "titulo"
     t.string   "descricao"
     t.string   "link"
+    t.integer  "politico_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "photo_file_name"
@@ -24,6 +25,8 @@ ActiveRecord::Schema.define(version: 20160509214315) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
   end
+
+  add_index "acontecimentos", ["politico_id"], name: "index_acontecimentos_on_politico_id"
 
   create_table "partidos", force: :cascade do |t|
     t.string   "nome"

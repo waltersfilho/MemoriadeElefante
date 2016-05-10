@@ -1,7 +1,7 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-<section id="login" class="content section-grey" style="background-image: url(img/home_01.jpg) repeat;">
+<section id="login" class="content section-grey" style="background-image: <%= asset_path 'home_01.jpg'%>; repeat">
     	<div class="container">
         	<div class="row">
             	

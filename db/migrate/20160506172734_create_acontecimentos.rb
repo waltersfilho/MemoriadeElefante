@@ -4,6 +4,7 @@ class CreateAcontecimentos < ActiveRecord::Migration
       t.string :titulo
       t.string :descricao
       t.string :link
+      t.references :politico, index: true, foreign_key: true
 
       t.timestamps null: false
     end

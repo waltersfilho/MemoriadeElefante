@@ -8,11 +8,11 @@ class AcontecimentosController < ApplicationController
   end
   
   def upvote
-    @post.upvote_by current_user
+    @acontecimento.upvote_by current_user
     redirect_to :back
   end
   def downvote
-    @post.downvote_from current_user
+    @acontecimento.downvote_from current_user
     redirect_to :back
 
   # GET /acontecimentos/1
@@ -78,6 +78,7 @@ class AcontecimentosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_acontecimento
+      set_politico
       @politico = Politico.find(params[:politico_id])
     end
 

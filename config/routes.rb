@@ -8,8 +8,14 @@ Rails.application.routes.draw do
       put "dislike", to: "acontecimentos#downvote"
     end
   end
+
   resources :politicos do
-    resources :acontecimentos
+    resources :acontecimentos do
+      member do
+        put "like", to: "acontecimentos#upvote"
+        put "dislike", to: "acontecimentos#downvote"
+      end
+    end
   end
   resources :partidos
 

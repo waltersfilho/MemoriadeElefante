@@ -28,11 +28,11 @@
                 <a class="btn btn-danger btn-xs">Read More</a>
               </div>
               <% if user_signed_in? %>
-                  <%= link_to like_politicos_acontecimento_path(acontecimento.politico, acontecimento), method: :put, class: "btn btn-sm btn-default" do %>
+                  <%= link_to like_politico_acontecimento_path(acontecimento.politico, acontecimento), method: :put, class: "btn btn-sm btn-default" do %>
                   <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
                   <%= acontecimento.get_upvotes.size %>
                   <% end %>
-                  <%= link_to deslike_politicos_acontecimento_path(acontecimento.politico, acontecimento), method: :put, class: "btn btn-sm btn-default " do %>
+                  <%= link_to dislike_politico_acontecimento_path(acontecimento.politico, acontecimento), method: :put, class: "btn btn-sm btn-default " do %>
                   <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
                   <%= acontecimento.get_downvotes.size %>
                   <% end %>

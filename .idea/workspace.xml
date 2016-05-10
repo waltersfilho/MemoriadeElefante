@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce95e3dc-3efb-4953-b634-246961f33a60" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/development.sqlite3" afterPath="$PROJECT_DIR$/db/development.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/acontecimentos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/acontecimentos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/acontecimentos/_acontecimento.html.erb" afterPath="$PROJECT_DIR$/app/views/acontecimentos/_acontecimento.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/acontecimento.rb" afterPath="$PROJECT_DIR$/app/models/acontecimento.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
     </list>
     <ignored path="MemoriadeElefante.iws" />
@@ -52,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="acontecimento.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="acontecimento.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/acontecimento.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+              <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -102,7 +101,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_acontecimento.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_acontecimento.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/acontecimentos/_acontecimento.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -165,12 +164,12 @@
         <option value="$PROJECT_DIR$/app/models/politico.rb" />
         <option value="$PROJECT_DIR$/app/views/acontecimentos/_form.html.erb" />
         <option value="$PROJECT_DIR$/config/initializers/rails_admin.rb" />
-        <option value="$PROJECT_DIR$/app/models/acontecimento.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/politicos/show.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/acontecimentos_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/acontecimentos/_acontecimento.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/acontecimento.rb" />
       </list>
     </option>
   </component>
@@ -571,12 +570,12 @@
       <workItem from="1462577193437" duration="21000" />
       <workItem from="1462577239043" duration="1728000" />
       <workItem from="1462900401998" duration="3871000" />
-      <workItem from="1462904732241" duration="8107000" />
+      <workItem from="1462904732241" duration="8545000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23586000" />
+    <option name="totallyTimeSpent" value="24024000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -949,14 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/acontecimento.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -993,6 +984,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/acontecimento.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
           <folding />
         </state>
       </provider>

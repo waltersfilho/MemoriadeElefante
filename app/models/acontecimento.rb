@@ -1,4 +1,4 @@
 class Acontecimento < ActiveRecord::Base
-    has_many :politico
+    belongs_to :politico
     acts_as_votable
 end

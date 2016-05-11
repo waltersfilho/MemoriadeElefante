@@ -29,7 +29,7 @@
 
       <!-- Home Menu -->
 
-      <li class="nav"><%= link_to 'Mapa Político', mapa_path %></li>
+      <li class=><a href="/mapa"> Mapa Político </a></li>
 
       <li class=><a>Cargos</a>
         <ul class="w-200">
@@ -45,7 +45,7 @@
       </li>
       <!-- /Home Menu -->
 
-      <li class="nav"><%= link_to 'Partidos', partidos_path %></li>
+      <li class="nav"><a href="/partidos"> Partidos </a></li>
 
       <% if user_signed_in? %>
         <% if current_user.admin? %>
@@ -55,7 +55,7 @@
         <li class="nav zm-right-item"><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
         <li class="nav zm-right-item"><%= link_to 'Editar', edit_user_registration_path %> </li>
       <% else %>
-        <li class="nav zm-right-item"><%= link_to 'Login', new_user_session_path %></li>
+        <li class="btn pi-btn-default btn-primary zm-right-item"><a href="/users/sign_in"> Login </a></li>
       <%end%>
 
 

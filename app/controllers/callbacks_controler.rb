@@ -1,4 +1,4 @@
-class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class CallbacksController < Devise::OmniauthCallbacksController
   def facebook
     logger.debug "Facebook Authentication"
     @user = User.from_omniauth(request.env["omniauth.auth"])

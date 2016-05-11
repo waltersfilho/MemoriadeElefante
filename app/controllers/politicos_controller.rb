@@ -20,6 +20,7 @@ class PoliticosController < ApplicationController
   def show
   end
 
+
   # GET /politicos/new
   def new
     @politico = Politico.new
@@ -74,6 +75,7 @@ class PoliticosController < ApplicationController
     def set_politico
       @politico = Politico.find(params[:id])
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def politico_params

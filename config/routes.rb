@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { omniauth_callbacks: "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"  }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: "politicos#home"
   resources :acontecimentos do
@@ -20,8 +20,6 @@ Rails.application.routes.draw do
   resources :partidos
 
   get 'mapa'=> 'politicos#mapa'
-
-  
 
 
 

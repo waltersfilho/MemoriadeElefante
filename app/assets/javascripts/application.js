@@ -15,3 +15,5 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets 
+//= require brazil
+//= require jquery-jvectormap-1.2.2.min

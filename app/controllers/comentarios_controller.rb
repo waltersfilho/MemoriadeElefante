@@ -1,5 +1,6 @@
 class ComentariosController < ApplicationController
-  before_action :set_politico, only: [:show, :edit, :update, :destroy]
+  before_action :set_politico, only: [:create]
+  before_action :set_comentario, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!
   before_filter :require_permission, only: [:destroy]
 
@@ -7,6 +8,15 @@ class ComentariosController < ApplicationController
   # GET /comentarios.json
   def index
     @comentarios = Comentario.all
+  end
+
+  def upvote
+    @comentario.upvote_by current_user
+    redirect_to :back
+  end
+  def downvote
+    @comentario.downvote_by current_user
+    redirect_to :back
   end
 
   # GET /comentarios/1
@@ -30,16 +40,6 @@ class ComentariosController < ApplicationController
     @comentario.user_id = current_user.id
     @comentario.save
     redirect_to @politico
-
-    respond_to do |format|
-      if @comentario.save
-        format.html { redirect_to @comentario, notice: 'Comentario was successfully created.' }
-        format.json { render :show, status: :created, location: @comentario }
-      else
-        format.html { render :new }
-        format.json { render json: @comentario.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /comentarios/1
@@ -59,26 +59,28 @@ class ComentariosController < ApplicationController
   # DELETE /comentarios/1
   # DELETE /comentarios/1.json
   def destroy
-    @comentario = @politico.comentarios.build(comentario_params)
+    #Encontrando um comentário dentro do post.
+    @comentario = @politico.comentarios.find(params[:id])
     @comentario.destroy
     redirect_to @politico
-    respond_to do |format|
-      format.html { redirect_to comentarios_url, notice: 'Comentario was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
      def require_permission
-      set_politico
+      set_comentario
       @comentario = @politico.comentarios.find(params[:id])
       if (current_user != @politico.user) and (current_user != @comentario.user)
         flash[:notice] = 'Permissões insuficientes!'
         redirect_to @politico
       end
+     end
+
+    def set_politico
+      @politico = Politico.find(params[:politico_id])
     end
     def set_comentario
+      set_politico
       @politico = Politico.find(params[:politico_id])
     end
 

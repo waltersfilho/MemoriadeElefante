@@ -1,5 +1,7 @@
 class PoliticosController < ApplicationController
   before_action :set_politico, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  #Garantindo que somente o dono de um Post pode executar as ações de edit, update e destroy
+  before_filter :require_permission, only: [:edit, :update, :destroy]
 
   def home
     render :layout => 'landing'
@@ -32,7 +34,7 @@ class PoliticosController < ApplicationController
 
   # GET /politicos/new
   def new
-    @politico = Politico.new
+    @politico = current_user.politicos.build
   end
 
   # GET /politicos/1/edit
@@ -42,7 +44,7 @@ class PoliticosController < ApplicationController
   # POST /politicos
   # POST /politicos.json
   def create
-    @politico = Politico.new(politico_params)
+    @politico = current_user.politicos.build(politico_params)
 
     respond_to do |format|
       if @politico.save
@@ -81,6 +83,12 @@ class PoliticosController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def require_permission
+      if current_user != Politico.find(params[:id]).user
+        flash[:notice] = 'Permissões insuficientes!'
+        redirect_to root_path
+      end
+    end
     def set_politico
       @politico = Politico.find(params[:id])
     end

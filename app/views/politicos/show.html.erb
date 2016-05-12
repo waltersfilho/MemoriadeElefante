@@ -23,23 +23,24 @@
                         <li class="wow fadeInDown" data-wow-duration="2s"><i></i>Natural de <%= @politico.cidade %> </li>
                         <li class="wow fadeInDown" data-wow-duration="3s"><i></i><%= image_tag(@politico.partido.photo.url(:thumb)) %></li>
                     </ul>
-                    <br>
-                    <br>
-                    <% if user_signed_in? %>
-                      <%= link_to like_politico_path(@politico), method: :put, class: "btn btn-info btn-lg" do %>
-                        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-                        <%= @politico.get_upvotes.size %>
-                      <% end %>
-                      <%= link_to dislike_politico_path(@politico), method: :put, class: "btn btn-info btn-lg " do %>
-                        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-                        <%= @politico.get_downvotes.size %>
-                      <% end %>
-                  <%end %>
                 </div>
                 
             </div><!-- end row -->
         </div><!-- end container -->
     </section>
+    <h5 class="text-center"> Você gosta de <%= @politico.nome %> ?</h5>
+    <% if user_signed_in? %>
+        <%= link_to like_politico_path(@politico), method: :put, class: "btn pi-btn-green btn-lg pull-center" do %>
+            Curtir
+            <span class="glyphicon glyphicon-thumbs-up text-center" aria-hidden="true"></span>
+            <%= @politico.get_upvotes.size %>
+        <% end %>
+        <%= link_to dislike_politico_path(@politico), method: :put, class: "btn pi-btn-red btn-lg pull-center" do %>
+            Descurtir
+            <span class="glyphicon glyphicon-thumbs-down text-center" aria-hidden="true"></span>
+            <%= @politico.get_downvotes.size %>
+        <% end %>
+    <%end %>
     <div class="container" >
       <div class="row ">
         <div class="col-md-offset-2 col-md-8 col-sm-12 top-margin" >

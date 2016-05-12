@@ -12,13 +12,27 @@
         <%end%></strong>
         </small></p>
     </div>
-    <%if (current_user == comentario.politico.user) or (current_user == comentario.user)%>
-    <div class="btn-group pull-right">
-      <%= link_to "Apagar comentário", [comentario.politico, comentario], 
-              method: :delete, 
-              class: "btn btn-sm btn-default",
-              data: { confirm: "Tem certeza?" } %>
-    </div>
-    <%end%>
+    <% if user_signed_in? %>
+        <div class="btn-group pull-right">
+          <%= link_to like_politico_comentario_path(comentario.politico, comentario), method: :put, class: "btn pi-btn-green btn-default" do %>
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+              Curtir
+              <%= comentario.get_upvotes.size %>
+          <% end %>
+          <%= link_to dislike_politico_comentario_path(comentario.politico, comentario), method: :put, class: "btn pi-btn-red btn-default " do %>
+              <span class="glyphicon glyphicon-thumbs-down"></span>
+              Descurtir
+              <%= comentario.get_downvotes.size %>
+          <% end %>
+          <%if (current_user == comentario.politico.user) or (current_user == comentario.user)%>
+            <div class="btn-group pull-right">
+              <%= link_to "Apagar comentário", [comentario.politico, comentario],
+                      method: :delete,
+                      class: "btn btn-warning",
+                      data: { confirm: "Tem certeza?" } %>
+            </div>
+          <%end%>
+        </div>
+    <% end %>
   </div>
 <% end %>

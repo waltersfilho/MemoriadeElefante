@@ -71,5 +71,7 @@
       <%end%></h3>
     <div id="comments">
     <%= render @politico.comentarios %>
-    <%= render "comentarios/form" %>
+    <% if user_signed_in? %>
+      <%= render "comentarios/form" %>
+    <%end%>
   </div>

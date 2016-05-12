@@ -1,4 +1,3 @@
-<% if user_signed_in? %>
   <%= form_for([@politico, @politico.comentarios.build]) do |f| %>
         <section class="content">
           <div class="container">
@@ -12,14 +11,8 @@
                         Enviar comentário
                     <% end %>
                   </blockquote>
-                  <div class="arrow-down"></div>
-                  <div class="testimonial-info ">
-                    <%=image_tag(current_user.photo.url(:thumb))%>
-                  </div>
-                  </div>
                 </div>
               </div>
             </div>
           </section>
-        <%end%>
-  <% end %>
+ <%end%>

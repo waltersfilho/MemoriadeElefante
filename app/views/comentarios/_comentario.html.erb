@@ -4,35 +4,54 @@
       <p class="lead">
         <%= comentario.mensagem %>
       </p>
-      <p><small>Enviado há <strong><%= time_ago_in_words(comentario.created_at) %></strong> atrás por <strong>
-        <% if comentario.user == current_user %>
-            você
-        <% else %>
-          <%= comentario.user.email %>
-        <%end%></strong>
-        </small></p>
     </div>
-    <% if user_signed_in? %>
-        <div class="btn-group pull-right">
-          <%= link_to like_politico_comentario_path(comentario.politico, comentario), method: :put, class: "btn pi-btn-green btn-default" do %>
-              <span class="glyphicon glyphicon-thumbs-up"></span>
-              Curtir
-              <%= comentario.get_upvotes.size %>
-          <% end %>
-          <%= link_to dislike_politico_comentario_path(comentario.politico, comentario), method: :put, class: "btn pi-btn-red btn-default " do %>
-              <span class="glyphicon glyphicon-thumbs-down"></span>
-              Descurtir
-              <%= comentario.get_downvotes.size %>
-          <% end %>
-          <%if (current_user == comentario.politico.user) or (current_user == comentario.user)%>
-            <div class="btn-group pull-right">
-              <%= link_to "Apagar comentário", [comentario.politico, comentario],
-                      method: :delete,
-                      class: "btn btn-warning",
-                      data: { confirm: "Tem certeza?" } %>
-            </div>
-          <%end%>
-        </div>
+        <section class="content">
+          <div class="container">
+              <div class="col-sm-6 padd">
+                <div class="owl-carousel owl-testimonial-default">
+
+                  <div class="item">
+                    <blockquote class="testimonial">
+                      <p><%= comentario.mensagem %><br></p>
+                    </blockquote>
+                    <div class="arrow-down"></div>
+                    <div class="testimonial-info ">
+                      <%=image_tag(current_user.photo.url(:thumb))%>
+                      <div class="testimonial-author">
+                        <h6>
+                          <% if comentario.user == current_user %>
+                              Você
+                          <% else %>
+                              <%= comentario.user.email %>
+                          <%end%>
+                        </h6>
+                        Enviado há <strong><%= time_ago_in_words(comentario.created_at) %></strong>
+                        <% if user_signed_in? %>
+                        <div class="btn-group pull-right">
+                          <%= link_to like_politico_comentario_path(comentario.politico, comentario), method: :put, class: "btn pi-btn-green btn-default" do %>
+                              <span class="glyphicon glyphicon-thumbs-up"></span>
+                              <%= comentario.get_upvotes.size %>
+                          <% end %>
+                          <%= link_to dislike_politico_comentario_path(comentario.politico, comentario), method: :put, class: "btn pi-btn-red btn-default " do %>
+                              <span class="glyphicon glyphicon-thumbs-down"></span>
+                              <%= comentario.get_downvotes.size %>
+                          <% end %>
+                          <%if (current_user == comentario.politico.user) or (current_user == comentario.user)%>
+                              <div class="btn-group pull-right">
+                                <%= link_to "Apagar", [comentario.politico, comentario],
+                                            method: :delete,
+                                            class: "btn btn-warning",
+                                            data: { confirm: "Tem certeza?" } %>
+                              </div>
+                          <%end%>
+                        </div>
+                      <% end %>
+                      </div><!-- end testimonial-author -->
+                    </div><!-- end testimonial-info -->
+                  </div><!-- end item -->
+                  </div>
+                </div>
+              </div>
+          </section>
+    </div>
     <% end %>
-  </div>
-<% end %>

@@ -1,5 +1,5 @@
 class PoliticosController < ApplicationController
-  before_action :set_politico, only: [:show, :edit, :update, :destroy]
+  before_action :set_politico, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def home
     render :layout => 'landing'
@@ -7,6 +7,15 @@ class PoliticosController < ApplicationController
 
   def mapa
     render "mapa"
+  end
+  
+  def upvote
+    @politico.upvote_by current_user
+    redirect_to :back
+  end
+  def downvote
+    @politico.downvote_from current_user
+    redirect_to :back
   end
 
   # GET /politicos

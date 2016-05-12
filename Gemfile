@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.1.0'
 #Gem de autenticacao
   gem 'devise'
   
+gem 'bootstrap-sass', '~> 3.3.6'
+  
 # Gem de Like/Dislike
 gem 'acts_as_votable', '~> 0.10.0'
 

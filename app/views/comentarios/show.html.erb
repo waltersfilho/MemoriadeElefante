@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mensagem:</strong>
+  <%= @comentario.mensagem %>
+</p>
+
+<p>
+  <strong>Politico:</strong>
+  <%= @comentario.politico %>
+</p>
+
+<%= link_to 'Edit', edit_comentario_path(@comentario) %> |
+<%= link_to 'Back', comentarios_path %>

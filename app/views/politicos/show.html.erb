@@ -23,13 +23,61 @@
                         <li class="wow fadeInDown" data-wow-duration="2s"><i></i>Natural de <%= @politico.cidade %> </li>
                         <li class="wow fadeInDown" data-wow-duration="3s"><i></i><%= image_tag(@politico.partido.photo.url(:thumb)) %></li>
                     </ul>
+                    <br>
+                    <br>
+                    <% if user_signed_in? %>
+                      <%= link_to like_politico_path(@politico), method: :put, class: "btn btn-info btn-lg" do %>
+                        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                        <%= @politico.get_upvotes.size %>
+                      <% end %>
+                      <%= link_to dislike_politico_path(@politico), method: :put, class: "btn btn-info btn-lg " do %>
+                        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+                        <%= @politico.get_downvotes.size %>
+                      <% end %>
+                  <%end %>
                 </div>
                 
             </div><!-- end row -->
         </div><!-- end container -->
     </section>
-
-    <%= render @politico.acontecimentos %>
+    <div class="container" >
+      <div class="row ">
+        <div class="col-md-offset-2 col-md-8 col-sm-12 top-margin" >
+          <div >
+            <ul class="timeline">
+              <li class="time-label">
+                                    <span class="bg-orange">Acontecimentos Marcantes
+                                    </span>
+                <br />
+                <br />
+              </li>
+              <%= render @politico.acontecimentos %>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <% c=@politico.comentarios.count %>
+    <h3>
+      <%if c > 0 %>
+          <%= c %> 
+          <% if c > 1 %>
+              comentários
+          <% else %>
+              comentário
+          <% end %>
+      <%else%>
+          Sem comentários
+      <%end%>
+    </h3>
+    
+    <div id="comments">
+    <%= render @politico.comentarios %>
+    <%= render "comentarios/form" %>
+  </div>
+          
+            
 
 <p>
   <strong>Nome:</strong>

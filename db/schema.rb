@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160509214315) do
+ActiveRecord::Schema.define(version: 20160512183754) do
 
   create_table "acontecimentos", force: :cascade do |t|
     t.string   "titulo"
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 20160509214315) do
   end
 
   add_index "acontecimentos", ["politico_id"], name: "index_acontecimentos_on_politico_id"
+
+  create_table "comentarios", force: :cascade do |t|
+    t.string   "mensagem"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "politico_id"
+    t.integer  "user_id"
+  end
+
+  add_index "comentarios", ["politico_id"], name: "index_comentarios_on_politico_id"
+  add_index "comentarios", ["user_id"], name: "index_comentarios_on_user_id"
 
   create_table "partidos", force: :cascade do |t|
     t.string   "nome"

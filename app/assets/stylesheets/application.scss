@@ -13,6 +13,8 @@
  */
 
 @import "timeline";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import "bootstrap.min";
 @import "owl.carousel";
 @import "zetta-menu.min";
@@ -35,3 +37,4 @@
     text-align: center;
     img { width: 100% }
 }
+

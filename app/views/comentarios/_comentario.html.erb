@@ -1,0 +1,24 @@
+<%= div_for(comentario) do %>
+  <div class="comments_wrapper clearfix">
+    <div class="pull-left">
+      <p class="lead">
+        <%= comentario.mensagem %>
+      </p>
+      <p><small>Enviado há <strong><%= time_ago_in_words(comentario.created_at) %></strong> atrás por <strong>
+        <% if comentario.user == current_user %>
+            você
+        <% else %>
+          <%= comentario.user.email %>
+        <%end%></strong>
+        </small></p>
+    </div>
+    <%if (current_user == comentario.politico.user) or (current_user == comentario.user)%>
+    <div class="btn-group pull-right">
+      <%= link_to "Apagar comentário", [comentario.politico, comentario], 
+              method: :delete, 
+              class: "btn btn-sm btn-default",
+              data: { confirm: "Tem certeza?" } %>
+    </div>
+    <%end%>
+  </div>
+<% end %>

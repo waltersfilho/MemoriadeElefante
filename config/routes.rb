@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   
   resources :partidos
   
-  get '/politicos/cargo/:cargo_eleito' => 'politicos#show'
+  get '/politicos/cargos/:cargo_eleito' => 'politicos#show'
   get '/politicos/:id' => 'politicos#show'
   get 'mapa'=> 'politicos#mapa'
 

@@ -15,12 +15,12 @@
                 <a class="btn btn-primary btn-xs">Share</a>
                 <a class="btn btn-danger btn-xs">Read More</a>
                 <% if user_signed_in? %>
-                    <%= link_to like_politico_acontecimento_path(acontecimento.politico, acontecimento), method: :put, class: "btn pi-btn-green pull-center" do %>
+                    <%= link_to like_politico_acontecimento_path(acontecimento.politico, acontecimento), method: :put, class: "btn pi-btn-green btn-xs pull-center" do %>
                         Curtir
                         <span class="glyphicon glyphicon-thumbs-up text-center" aria-hidden="true"></span>
                         <%= acontecimento.get_upvotes.size %>
                     <% end %>
-                    <%= link_to dislike_politico_acontecimento_path(acontecimento.politico, acontecimento), method: :put, class: "btn pi-btn-red pull-center" do %>
+                    <%= link_to dislike_politico_acontecimento_path(acontecimento.politico, acontecimento), method: :put, class: "btn pi-btn-red btn-xs pull-center" do %>
                         Descurtir
                         <span class="glyphicon glyphicon-thumbs-down text-center" aria-hidden="true"></span>
                         <%= acontecimento.get_downvotes.size %>

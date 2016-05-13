@@ -16,7 +16,7 @@
                     </blockquote>
                     <div class="arrow-down"></div>
                     <div class="testimonial-info ">
-                      <%=image_tag(current_user.photo.url(:thumb))%>
+                      <%=image_tag(comentario.user.photo.url(:thumb))%>
                       <div class="testimonial-author">
                         <h6>
                           <% if comentario.user == current_user %>

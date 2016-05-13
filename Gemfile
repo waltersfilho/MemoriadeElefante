@@ -31,8 +31,13 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+gem 'delayed_job_active_record'
+gem 'progress_job'
+
 #Gem do Paperclip
 gem "paperclip", "~> 5.0.0.beta1"
+
+gem 'css3-progress-bar-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

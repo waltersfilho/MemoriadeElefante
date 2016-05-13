@@ -1,4 +1,5 @@
 class AcontecimentosController < ApplicationController
+  before_action :set_politico, only: [:create]
   before_action :set_acontecimento, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   # GET /acontecimentos
@@ -77,6 +78,9 @@ class AcontecimentosController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_politico
+      @politico = Politico.find(params[:politico_id])
+    end
     def set_acontecimento
       set_politico
       @politico = Politico.find(params[:politico_id])

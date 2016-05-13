@@ -28,42 +28,6 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </section>
-    <section class="content">
-    	<div class="container">
-        	<div class="row">
-                <div class="col-sm-6 padd">
-                    <div class="progress">
-                      <% likes = 0
-                         deslikes = 0 %>
-                      <% total = @politico.get_downvotes.size + @politico.get_upvotes.size %>
-                      <% likes = (@politico.get_upvotes.size / total.to_f) * 100 %>
-                      <% dislikes = (@politico.get_downvotes.size / total.to_f) * 100 %>
-                      <div class="progress-bar progress-bar-success" data-percentage="<%=likes%>" style="width: <%=likes%>%;">
-                        <span class="skills-name pull-left">Gostou</span>  
-                        <span class="skills-percentage pull-right"></span>
-                      </div><!-- end progress-bar -->
-                      <div class="progress-bar progress-bar-danger" data-percentage="<%=dislikes%>" style="width: <%=dislikes%>%;">
-                        <span class="skills-name pull-right">Não Gostou</span> 
-                        <span class="skills-percentage pull-left"></span>
-                      </div><!-- end progress -->
-                    </div>
-                </div>
-            </div>
-        </div>
-      </section>
-    <% if user_signed_in? %>
-        <h5 class="text-center"> Você gosta de <%= @politico.nome %> ?</h5>
-        <%= link_to like_politico_path(@politico), method: :put, class: "btn pi-btn-green btn-lg pull-center" do %>
-            Curtir
-            <span class="glyphicon glyphicon-thumbs-up text-center" aria-hidden="true"></span>
-            <%= @politico.get_upvotes.size %>
-        <% end %>
-        <%= link_to dislike_politico_path(@politico), method: :put, class: "btn pi-btn-red btn-lg pull-center" do %>
-            Descurtir
-            <span class="glyphicon glyphicon-thumbs-down text-center" aria-hidden="true"></span>
-            <%= @politico.get_downvotes.size %>
-        <% end %>
-    <%end %>
     <div class="container" >
       <div class="row ">
         <div class="col-md-offset-2 col-md-8 col-sm-12 top-margin" >

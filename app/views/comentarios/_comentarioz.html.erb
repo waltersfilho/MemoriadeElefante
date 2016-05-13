@@ -1,0 +1,64 @@
+<table width="960" border="0" align="center">
+  <tbody>
+    <tr>
+      <td align="center" valign="middle">
+      
+      <%= div_for(comentario) do %>
+        <section class="content">
+          <div class="container">
+            <div class="col-sm-6 padd">
+              <div class="owl-carousel owl-testimonial-default">
+                <div class="item">
+                  <blockquote class="testimonial">
+                    <p><%= comentario.mensagem %><br></p>
+                  </blockquote>
+                  <div class="arrow-down"></div>
+                  <div class="testimonial-info ">
+                    <%=image_tag(comentario.user.photo.url(:thumb))%>
+                    <div class="testimonial-author">
+                      <h6>
+                        <% if comentario.user == current_user %>
+                          Você
+                        <% else %>
+                          <%= comentario.user.email %>
+                        <%end%>
+                      </h6>
+                      Enviado há <strong><%= time_ago_in_words(comentario.created_at) %></strong>
+                      <% if user_signed_in? %>
+                        <div class="btn-group pull-right">
+                          <%= link_to like_politico_comentario_path(comentario.politico, comentario), method: :put, class: "btn pi-btn-green btn-default" do %>
+                            <span class="glyphicon glyphicon-thumbs-up"></span>
+                            <%= comentario.get_upvotes.size %>
+                          <% end %>
+                          <%= link_to dislike_politico_comentario_path(comentario.politico, comentario), method: :put, class: "btn pi-btn-red btn-default " do %>
+                            <span class="glyphicon glyphicon-thumbs-down"></span>
+                            <%= comentario.get_downvotes.size %>
+                          <% end %>
+                          <%if (current_user == comentario.politico.user) or (current_user == comentario.user)%>
+                            <div class="btn-group pull-right">
+                              <%= link_to [comentario.politico, comentario],
+                                          method: :delete,
+                                          class: "btn btn-warning",
+                                          data: { confirm: "Tem certeza?"}  do %>
+                              <span class=" glyphicon glyphicon-trash"></span>
+                              <%end%>
+                            </div>
+                          <%end%>
+                        </div>
+                      <% end %>
+                    </div><!-- end testimonial-author -->
+                  </div><!-- end testimonial-info -->
+                </div><!-- end item -->
+              </div>
+            </div>
+          </div>
+        </section>
+    <% end %>
+      
+      
+      
+      
+      </td>
+    </tr>
+  </tbody>
+</table>

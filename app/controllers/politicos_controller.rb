@@ -10,6 +10,7 @@ class PoliticosController < ApplicationController
   def mapa
     render "mapa"
   end
+
   
   def upvote
     @politico.upvote_by current_user

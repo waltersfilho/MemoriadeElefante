@@ -3,12 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"  }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: "politicos#home"
-  resources :acontecimentos do
-    member do
-      put "like", to: "acontecimentos#upvote"
-      put "dislike", to: "acontecimentos#downvote"
-    end
-  end
+
 
   resources :politicos do
       member do
@@ -19,6 +14,12 @@ Rails.application.routes.draw do
         member do
               put "like", to: "comentarios#upvote"
               put "dislike", to: "comentarios#downvote"
+        end
+      end
+      resources :acontecimentos do
+        member do
+          put "like", to: "acontecimentos#upvote"
+          put "dislike", to: "acontecimentos#downvote"
         end
       end
   end

@@ -15,6 +15,7 @@ class AcontecimentosController < ApplicationController
   def downvote
     @acontecimento.downvote_from current_user
     redirect_to :back
+  end
 
   # GET /acontecimentos/1
   # GET /acontecimentos/1.json
@@ -83,12 +84,11 @@ class AcontecimentosController < ApplicationController
     end
     def set_acontecimento
       set_politico
-      @politico = Politico.find(params[:politico_id])
+      @acontecimento = @politico.acontecimentos.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def acontecimento_params
       params.require(:acontecimento).permit(:titulo, :descricao, :link, :photo)
     end
-  end
 end

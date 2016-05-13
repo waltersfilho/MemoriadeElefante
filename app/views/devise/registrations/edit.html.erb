@@ -36,6 +36,11 @@
                         	<span class="input-group-addon"><i class="fa fa-lock"> </i></span>
                         	<%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Sua senha atual" %>
                         </div>
+                    
+                        <div class="field">
+                          <%= f.label "Foto de perfil" %><br>
+                          <%= f.file_field :photo, class: "form-control" %>
+                        </div>
                         
                         <%= f.submit "Alterar", class:"btn btn-lg pi-btn-default rounded" %><br><br>
                         

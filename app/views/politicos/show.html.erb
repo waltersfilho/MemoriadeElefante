@@ -47,7 +47,8 @@
                         <span class="skills-percentage pull-left"></span>
                       </div><!-- end progress -->
                     </div>
-          </div>
+                </div>
+            </div>
         </div>
       </section>
     <% if user_signed_in? %>
@@ -92,6 +93,7 @@
           Sem comentários
       <%end%></h3>
     <div id="comments">
+
     <%= render @politico.comentarios %>
     <% if user_signed_in? %>
       <%= render "comentarios/form" %>

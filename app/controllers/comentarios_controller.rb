@@ -81,7 +81,8 @@ class ComentariosController < ApplicationController
     end
     def set_comentario
       set_politico
-      @politico = Politico.find(params[:politico_id])
+      #@politico = Politico.find(params[:politico_id])
+      @comentario = @politico.comentarios.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

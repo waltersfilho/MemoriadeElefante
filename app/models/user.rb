@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
       user.password = Devise.friendly_token[0,20]
     end
   end
-  has_attached_file :photo, styles: { medium: "640x400>", thumb: "150x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :photo, styles: { medium: "640x400>", thumb: "150x100>" }, default_url: "http://cdn.ipetitions.com/rev/176/assets/v3/img/default-avatar.png"
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
   validates_with AttachmentSizeValidator, attributes: :photo, less_than: 5.megabytes
   

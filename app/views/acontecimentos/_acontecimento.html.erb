@@ -7,7 +7,7 @@
             <i class="fa fa-envelope bg-blue"></i>
             <div class="timeline-item">
               <span class="time"><i class="fa fa-clock-o"></i>20 Feburary</span>
-              <h3 class="timeline-header"> <%= acontecimento.link %> </h3>
+              <h3 class="timeline-header"> <%=link_to acontecimento.titulo,"http://#{acontecimento.link}"%> </h3>
               <div class="timeline-body">
                <%= acontecimento.descricao %>
               </div>

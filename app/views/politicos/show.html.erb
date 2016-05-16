@@ -1,5 +1,5 @@
 <%= div_for(@politico) do %>
-<section class="content">
+<section class="home section-parallax parallaxBg">
     	<div class="container">
         	<div class="row">
             	<div class="col-sm-12 col-md-5 padd">
@@ -40,7 +40,7 @@
                   <br />
                   <br />
                 </li>
-                <%= render @politico.acontecimentos %>
+                <%= render @politico.acontecimentos.reverse %>
                 </ul>
             </div>
           </div>
@@ -60,7 +60,7 @@
       <%end%></h3>
     <div id="comments">
 
-    <%= render @politico.comentarios %>
+    <%= render @politico.comentarios.reverse %>
     <% if user_signed_in? %>
       <%= render "comentarios/form" %>
     <%end%>

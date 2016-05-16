@@ -1,15 +1,14 @@
-
           <li class="time-label">
-                                <span class="bg-light-blue"> Year 2014
+                                <span class="bg-light-blue"> <%= acontecimento.created_at.strftime("%Y") %>
                                 </span>
           </li>
           <li>
             <i class="fa fa-envelope bg-blue"></i>
             <div class="timeline-item">
-              <span class="time"><i class="fa fa-clock-o"></i>20 Feburary</span>
+              <span class="time"><i class="fa fa-clock-o"></i><%= acontecimento.created_at.strftime("%d/%m/%Y") %></span>
               <h3 class="timeline-header"> <%=link_to acontecimento.titulo,"http://#{acontecimento.link}"%> </h3>
-              <div class="timeline-body">
-               <%= acontecimento.descricao %>
+              <div class="timeline-body" style="background-color:">
+                   <%= acontecimento.descricao %>
               </div>
               <div class='timeline-footer'>
                 <a class="btn btn-primary btn-xs">Share</a>
@@ -26,6 +25,16 @@
                         <%= acontecimento.get_downvotes.size %>
                     <% end %>
                 <%end %>
+                <% case acontecimento.link.at(11..12) %>
+                    <% when "g1" %>
+                    <small style="float:right"> Fonte: G1 </small>
+                    <% when "gl" %>
+                    <small style="float:right"> Fonte: Globo.com </small>
+                    <% when "og" %>
+                    <small style="float:right"> Fonte: Jornal O Globo </small>
+                    <% else %>
+                    <small style="float:right"> Fonte: Desconhecida </small>
+                <% end %>
               </div>
             </div>
           </li>

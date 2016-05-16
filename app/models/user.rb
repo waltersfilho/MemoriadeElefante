@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
+      
     end
   end
   has_attached_file :photo, styles: { medium: "640x400>", thumb: "150x100>" }, default_url: "http://cdn.ipetitions.com/rev/176/assets/v3/img/default-avatar.png"
@@ -18,4 +19,15 @@ class User < ActiveRecord::Base
   
   has_many :politicos, dependent: :destroy
   has_many :comentarios, through: :politicos
+  
+  def self.new_with_session(params, session)
+  super.tap do |user|
+    if omniauth = session["devise.facebook_data"]
+      user.email = omniauth.info.email
+      user.name = omniauth.info.name
+      user.photo = omniauth.info.image
+    end
+  end
+end
+
 end

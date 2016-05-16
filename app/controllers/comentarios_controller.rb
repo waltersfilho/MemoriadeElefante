@@ -7,7 +7,7 @@ class ComentariosController < ApplicationController
   # GET /comentarios
   # GET /comentarios.json
   def index
-    @comentarios = Comentario.all
+    @comentarios = Comentario.order("created_at asc")
   end
 
   def upvote

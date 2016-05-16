@@ -1,32 +1,51 @@
 <%= div_for(@politico) do %>
-<section class="home section-parallax parallaxBg">
-    	<div class="container">
-        	<div class="row">
-            	<div class="col-sm-12 col-md-5 padd">
-                    <div class="owl-carousel owl-item-1">
-
-                        <div class="item">
-                          <%= image_tag(@politico.photo.url(:medium)) %>
-                        </div>
-
-                    </div><!-- end owl-item-1 -->
-                </div>
-                
-                <div class="col-sm-12 col-md-7 padd">
-                	<h5><%= @politico.nome %></h5>
-                    <div class="line-left"></div>
-                    <em>Vice: Michel Temer</em>
-					          <p>É um político brasileiro filiado ao PMDB, atual governador do Estado do Rio de Janeiro.[1] Pezão foi diagnosticado com linfoma não-hodgkin em 24 de março de 2016, um tipo de câncer raro que atinge o tecido ósseo.</p>
-                    <ul class="list1">
-                        <li class="wow fadeInDown" data-wow-duration="1s"><i></i><%= @politico.status %></li>
-                        <li class="wow fadeInDown" data-wow-duration="2s"><i></i>Natural de <%= @politico.cidade %> </li>
-                        <li class="wow fadeInDown" data-wow-duration="3s"><i></i><%= image_tag(@politico.partido.photo.url(:thumb)) %></li>
-                    </ul>
-                </div>
-                
-            </div><!-- end row -->
+<%titulo = "" %>
+<% titulo = @politico.nome %>
+<% @title=titulo %>
+ <% if @politico.cargo_eleito.downcase == "presidente" %>
+   <header id="header" class="section-parallax parallaxBg" style="background-image: url(/img/palacio-do-planalto-21.jpg);">
+ <% else %>
+   <% if @politico.cargo_eleito.downcase == "governador" %>
+     <% if @politico.estado.downcase == "rj" %>
+       <header id="header" class="section-parallax parallaxBg" style="background-image: url(/img/guanabara.jpg);">
+       <%else if @politico.estado.downcase == "sp" %>
+         <header id="header" class="section-parallax parallaxBg" style="background-image: url(/img/bandeirantes.jpg);">
+       <% end %>
+     <% end %>
+   <% end %>
+ <% end %>
+    	<div class="layer"></div>
+        <div class="container parallax-content text-center">
+        	<section class="home section-parallax parallaxBg">
+          	<div class="container">
+              	<div class="row">
+                  	<div class="col-sm-12 col-md-5 padd">
+                          <div class="owl-carousel owl-item-1">
+      
+                              <div class="item">
+                                <%= image_tag(@politico.photo.url(:medium)) %>
+                              </div>
+      
+                          </div><!-- end owl-item-1 -->
+                      </div>
+                      
+                      <div class="col-sm-12 col-md-7 padd">
+                      	<h5><%= @politico.nome %></h5>
+                          <div class="line"></div>
+                          <em> Vice: <%= @politico.vice %></em>
+      					          <p> <%= @politico.descricao %></p>
+                          <ul class="list1">
+                              <li class="wow fadeInDown" data-wow-duration="1s"><i></i><%= @politico.status %></li>
+                              <li class="wow fadeInDown" data-wow-duration="2s"><i></i>Natural de <%= @politico.cidade %> </li>
+                              <li class="wow fadeInDown" data-wow-duration="3s"><i></i><%= image_tag(@politico.partido.photo.url(:thumb)) %></li>
+                          </ul>
+                      </div>
+                  </div><!-- end row -->
+              </div><!-- end container -->
+            </section>
         </div><!-- end container -->
-    </section>
+    </header>
+    <br>
     <% c=@politico.acontecimentos.count %>
     <% if c > 0 %>
       <div class="container" >
@@ -66,3 +85,5 @@
     <%end%>
   </div>
 <% end %>
+
+

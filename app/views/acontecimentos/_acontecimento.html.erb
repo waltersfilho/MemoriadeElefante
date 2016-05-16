@@ -6,13 +6,12 @@
             <i class="fa fa-envelope bg-blue"></i>
             <div class="timeline-item">
               <span class="time"><i class="fa fa-clock-o"></i><%= acontecimento.created_at.strftime("%d/%m/%Y") %></span>
-              <h3 class="timeline-header"> <%=link_to acontecimento.titulo,"http://#{acontecimento.link}"%> </h3>
+              <h3 class="timeline-header"> <%=link_to acontecimento.titulo,"http://#{acontecimento.link}", :target => "_blank"%> </h3>
               <div class="timeline-body" style="background-color:">
                    <%= acontecimento.descricao %>
               </div>
               <div class='timeline-footer'>
-                <a class="btn btn-primary btn-xs">Share</a>
-                <a class="btn btn-danger btn-xs">Read More</a>
+                <a class="btn btn-primary btn-xs" href="https://www.facebook.com/sharer/sharer.php?u=<%=request.original_url%>" target="_blank">Compartilhar no Facebook</a>
                 <% if user_signed_in? %>
                     <%= link_to like_politico_acontecimento_path(acontecimento.politico, acontecimento), method: :put, class: "btn pi-btn-green btn-xs pull-center" do %>
                         Curtir
@@ -25,17 +24,63 @@
                         <%= acontecimento.get_downvotes.size %>
                     <% end %>
                 <%end %>
-                <% case acontecimento.link.at(11..12) %>
+                <% case acontecimento.link.at(4..5) %>
                     <% when "g1" %>
                     <small style="float:right"> Fonte: G1 </small>
                     <% when "gl" %>
                     <small style="float:right"> Fonte: Globo.com </small>
                     <% when "og" %>
                     <small style="float:right"> Fonte: Jornal O Globo </small>
+                    <% when "ca" %>
+                    <small style="float:right"> Fonte: Carta Capital</small>
                     <% else %>
                     <small style="float:right"> Fonte: Desconhecida </small>
                 <% end %>
               </div>
             </div>
           </li>
+          <script src='http://connect.facebook.net/pt_BR/all.js'></script>
+            <p><a onclick='postToFeed(); return false;'></a></p>
+            <p id='msg'></p>
+        
+            <script> 
+              FB.init({appId: "544616482377018", status: true, cookie: true});
+        
+              function postToFeed() {
+        
+                // calling the API ...
+                var obj = {
+                  method: 'feed',
+                  redirect_uri:'https://www.facebook.com/cryswashington?fref=ts',
+                  link:'https://developers.facebook.com/docs/reference/dialogs/',
+                  picture: 'http://fbrell.com/f8.jpg',
+                  name: 'Facebook Dialogs',
+                  caption: 'Reference Documentation',
+                  description: '<%= acontecimento.descricao %>'
+                };
+        
+                function callback(response) {
+        
+                document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+                }
+        
+                FB.ui(obj, callback);
+              }
+              
+              
+
+    </script>
+    <script type="text/javascript">
+      $(document).on('ready page:change', function() {
+        $("meta[name='twitter\\:title']").attr("content", "<%= acontecimento.titulo %>");
+        $("meta[name='twitter\\:description']").attr("content", "<%= acontecimento.descricao %>");
+        $("meta[name='twitter\\:image']").attr("content", "<%= @politico.photo %>");
+        $("meta[property='og\\:title']").attr("content", "<%= acontecimento.titulo %>");
+        $("meta[property='og\\:description']").attr("content", "<%= acontecimento.descricao %>");
+        $("meta[property='og\\:url']").attr("content", "<%= request.original_url %>");
+        $("meta[property='og\\:image']").attr("content", "<%= @politico.photo %>");
+      });
+</script>
+
+
 

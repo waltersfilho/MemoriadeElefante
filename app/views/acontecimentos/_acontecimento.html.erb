@@ -11,6 +11,13 @@
                    <%= acontecimento.descricao %>
               </div>
               <div class='timeline-footer'>
+                <a class="btn btn-primary btn-xs" href="https://twitter.com/share"
+                data-size="large"
+                data-url="<%= request.original_url%>"
+                data-via="waltersfilho"
+                data-related="politica,twitter"
+                data-hashtags="memoriadeelefante"
+                data-text="<%=acontecimento.titulo%>" to_see_on_twitter target="_blank">Compartilhar no Twitter</a>
                 <a class="btn btn-primary btn-xs" href="https://www.facebook.com/sharer/sharer.php?u=<%=request.original_url%>" target="_blank">Compartilhar no Facebook</a>
                 <% if user_signed_in? %>
                     <%= link_to like_politico_acontecimento_path(acontecimento.politico, acontecimento), method: :put, class: "btn pi-btn-green btn-xs pull-center" do %>

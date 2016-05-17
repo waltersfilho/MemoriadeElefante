@@ -1,11 +1,13 @@
+          <% if acontecimento.data_pub.strftime("%Y") == 2016 %>
           <li class="time-label">
-                                <span class="bg-light-blue"> <%= acontecimento.created_at.strftime("%Y") %>
+                                <span class="bg-light-blue"> <%= acontecimento.data_pub.strftime("%Y") %>
                                 </span>
           </li>
+          <% end %>
           <li>
             <i class="fa fa-envelope bg-blue"></i>
             <div class="timeline-item">
-              <span class="time"><i class="fa fa-clock-o"></i><%= acontecimento.created_at.strftime("%d/%m/%Y") %></span>
+              <span class="time"><i class="fa fa-clock-o"></i><%= acontecimento.data_pub.strftime("%d/%m/%Y") %></span>
               <h3 class="timeline-header"> <%=link_to acontecimento.titulo,"http://#{acontecimento.link}", :target => "_blank"%> </h3>
               <div class="timeline-body" style="background-color:">
                    <%= acontecimento.descricao %>
@@ -40,6 +42,14 @@
                     <small style="float:right"> Fonte: Jornal O Globo </small>
                     <% when "ca" %>
                     <small style="float:right"> Fonte: Carta Capital</small>
+                    <% when "co" %>
+                    <small style="float:right"> Fonte: Correio do Brasil</small>
+                    <% when "li" %>
+                    <small style="float:right"> Fonte: ZH Política</small>
+                    <% when "ci" %>
+                    <small style="float:right"> Fonte: Terra</small>
+                    <% when "fo" %>
+                    <small style="float:right"> Fonte: Folha de São Paulo</small>
                     <% else %>
                     <small style="float:right"> Fonte: Desconhecida </small>
                 <% end %>

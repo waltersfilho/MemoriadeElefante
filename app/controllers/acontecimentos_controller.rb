@@ -5,7 +5,7 @@ class AcontecimentosController < ApplicationController
   # GET /acontecimentos
   # GET /acontecimentos.json
   def index
-    @acontecimentos = Acontecimento.order("created_at desc")
+    @acontecimentos = Acontecimento.order(data_pub: :desc)
   end
   
   def upvote

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516211242) do
+ActiveRecord::Schema.define(version: 20160517140854) do
 
   create_table "acontecimentos", force: :cascade do |t|
     t.string   "titulo"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160516211242) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.date     "data_pub"
   end
 
   add_index "acontecimentos", ["politico_id"], name: "index_acontecimentos_on_politico_id"

@@ -91,11 +91,11 @@ class PoliticosController < ApplicationController
       end
     end
     def set_politico
-      if (params[:cargo_eleito] && params[:estado])  
-          @politico = Politico.where(:cargo_eleito=>params[:cargo_eleito]).where(:estado=>params[:estado]).first
+      if (params[:cargo_atual] && params[:estado])  
+          @politico = Politico.where(:cargo_eleito=>params[:cargo_atual]).where(:estado=>params[:estado]).first
         else
-        if (params[:cargo_eleito])
-          @politico = Politico.where(cargo_eleito: params[:cargo_eleito]).first
+        if (params[:cargo_atual])
+          @politico = Politico.where(cargo_atual: params[:cargo_atual]).first
         else
           @politico = Politico.find(params[:id])
         end  

@@ -1,6 +1,8 @@
 class AcontecimentosController < ApplicationController
   before_action :set_politico, only: [:create]
   before_action :set_acontecimento, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  before_action :authenticate_user!
+
 
   # GET /acontecimentos
   # GET /acontecimentos.json

@@ -98,7 +98,7 @@ class PoliticosController < ApplicationController
           @politico = Politico.where(cargo_atual: params[:cargo_atual]).first
         else
           @politico = Politico.find(params[:id])
-        end  
+        end
       end
     end
 

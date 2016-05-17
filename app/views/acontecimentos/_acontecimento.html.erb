@@ -21,18 +21,16 @@
                 data-hashtags="memoriadeelefante"
                 data-text="<%=acontecimento.titulo%>" to_see_on_twitter target="_blank">Compartilhar no Twitter</a>
                 <a class="btn btn-primary btn-xs" href="https://www.facebook.com/sharer/sharer.php?u=<%=request.original_url%>" target="_blank">Compartilhar no Facebook</a>
-                <% if user_signed_in? %>
-                    <%= link_to like_politico_acontecimento_path(acontecimento.politico, acontecimento), method: :put, class: "btn pi-btn-green btn-xs pull-center" do %>
-                        Curtir
-                        <span class="glyphicon glyphicon-thumbs-up text-center" aria-hidden="true"></span>
-                        <%= acontecimento.get_upvotes.size %>
-                    <% end %>
-                    <%= link_to dislike_politico_acontecimento_path(acontecimento.politico, acontecimento), method: :put, class: "btn pi-btn-red btn-xs pull-center" do %>
-                        Descurtir
-                        <span class="glyphicon glyphicon-thumbs-down text-center" aria-hidden="true"></span>
-                        <%= acontecimento.get_downvotes.size %>
-                    <% end %>
-                <%end %>
+                <%= link_to like_politico_acontecimento_path(acontecimento.politico, acontecimento), method: :put, class: "btn pi-btn-green btn-xs pull-center" do %>
+                    Curtir
+                    <span class="glyphicon glyphicon-thumbs-up text-center" aria-hidden="true"></span>
+                    <%= acontecimento.get_upvotes.size %>
+                <% end %>
+                <%= link_to dislike_politico_acontecimento_path(acontecimento.politico, acontecimento), method: :put, class: "btn pi-btn-red btn-xs pull-center" do %>
+                    Descurtir
+                    <span class="glyphicon glyphicon-thumbs-down text-center" aria-hidden="true"></span>
+                    <%= acontecimento.get_downvotes.size %>
+                <% end %>
                 <% case acontecimento.link.at(4..5) %>
                     <% when "g1" %>
                     <small style="float:right"> Fonte: G1 </small>

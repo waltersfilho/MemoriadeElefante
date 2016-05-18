@@ -46,6 +46,9 @@ gem 'social-share-button'
 
 gem 'yui-compressor', '~> 0.12.0'
 
+gem 'unicorn'
+
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

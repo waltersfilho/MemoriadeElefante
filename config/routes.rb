@@ -26,8 +26,7 @@ Rails.application.routes.draw do
   
   resources :partidos
 
-  get '/politicos/cargos/governadores' => 'politicos#index'
-  get '/politicos/cargos/:cargo_atual' => 'politicos#index'
+  get '/politicos/cargos/:cargo_atual' => 'politicos#show'
   get '/politicos/cargos/:cargo_atual/:estado' => 'politicos#show'
   get '/politicos/:id' => 'politicos#show'
   

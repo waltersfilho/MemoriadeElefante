@@ -34,7 +34,7 @@ Rails.application.configure do
   config.assets.compress = true
   
   # Choose the compressors to use
-  # config.assets.js_compressor  = :uglifier
+  config.assets.js_compressor  = :uglifier
   config.assets.css_compressor = :yui
 
 

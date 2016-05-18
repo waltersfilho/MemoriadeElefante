@@ -4,15 +4,11 @@
   <title>Memória de Elefante || <%= @title %></title>
   <meta charset="utf-8">
   <meta property="og:title" content="<%= @title %>" />
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-  <!-- FONTS -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 
   <!-- Favicon -->
   <%= favicon_link_tag '/favicon.ico' %>
@@ -57,7 +53,7 @@
     <ul id="nav" onClick="" class="zetta-menu zm-response-switch zm-full-width zm-effect-slide-top">
       <!-- LOGO -->
       <li class="zm-logo">
-        <a href="/"><img src="/img/logotipoold.png" alt="memoriadeelefante logo" /></a>
+        <%= image_tag("logotipoold.png") %>
       </li>
       <!-- end LOGO -->
 

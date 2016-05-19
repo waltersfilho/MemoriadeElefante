@@ -1,19 +1,17 @@
   <%= form_for([@politico, @politico.comentarios.build]) do |f| %>
-        <section class="content">
-          <div class="container">
-            <div class="col-sm-6 padd">
-              <div class="owl-carousel owl-testimonial-default">
-
-                <div class="item">
-                  <blockquote class="testimonial">
-                    <p><%= f.text_area :mensagem, class: "form-control" %><br></p>
-                    <%= button_tag(type: "submit", class: "btn pi-btn-light-grey", name: "commit", value: "conceal") do %>
-                        Enviar comentário
-                    <% end %>
-                  </blockquote>
-                </div>
-              </div>
-            </div>
+  <div class="post-comment">
+      <h5>Faça um comentário</h5>
+      <form>
+          <label>Mensagem:</label>
+          <div class="row margin-bottom-20">
+              <div class="col-md-11 col-md-offset-0">
+                  <%= f.text_area :mensagem, class: "form-control" %>
+              </div>                
           </div>
-        </section>
+          
+          <p><%= button_tag(type: "submit", class: "btn pi-btn-light-grey", name: "commit", value: "conceal") do %>
+                        Enviar comentário
+             <% end %></p>
+      </form>
+  </div>
  <%end%>

@@ -48,6 +48,8 @@ gem 'yui-compressor', '~> 0.12.0'
 
 gem 'unicorn'
 
+gem 'jquery-turbolinks'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

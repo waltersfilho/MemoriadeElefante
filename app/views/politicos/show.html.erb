@@ -22,7 +22,7 @@
                   	<div class="col-sm-12 col-md-5 padd">
                           <div class="owl-carousel owl-item-1">
       
-                              <div class="item">
+                              <div class="item" data-no-turbolink>
                                 <%= image_tag(@politico.photo.url(:medium)) %>
                               </div>
       
@@ -72,24 +72,34 @@
         </div>
       </div>
     <% end %>
-    <h3><% c=@politico.comentarios.count %>
-      <%if c > 0 %>
-          <%= c %>
-          <% if c > 1 %>
-              comentários
-          <% else %>
-              comentário
-          <% end %>
-      <%else%>
-          Sem comentários
-      <%end%></h3>
-    <div id="comments">
-
-    <%= render @politico.comentarios.reverse %>
-    <% if user_signed_in? %>
-      <%= render "comentarios/form" %>
-    <%end%>
-  </div>
+    
+    
+    <section class="content">
+    	<div class="container">
+        	<div class="row">
+                <div class="col-sm-12 blog-container margin-top-40">
+                    <div class="media">
+                      <hr class="divider-dotted divider-big" />
+                        <h5><% c=@politico.comentarios.count %>
+                            <%if c > 0 %>
+                                <%= c %>
+                                <% if c > 1 %>
+                                    comentários
+                                <% else %>
+                                    comentário
+                                <% end %>
+                            <%else%>
+                                Sem comentários
+                            <%end%>
+                        </h5>
+  
+                        <%= render @politico.comentarios.reverse, review: Comentario.new(politico_id: @politico.id) %>
+                    </div>
+                    <%= render "comentarios/form" %>
+                  </div>
+                </div>
+              </div>
+            </section>
 <% end %>
 
 

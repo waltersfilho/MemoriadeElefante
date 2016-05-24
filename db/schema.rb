@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160517140854) do
+ActiveRecord::Schema.define(version: 20160524155743) do
 
   create_table "acontecimentos", force: :cascade do |t|
     t.string   "titulo"
@@ -72,9 +72,11 @@ ActiveRecord::Schema.define(version: 20160517140854) do
     t.datetime "photo_updated_at"
     t.string   "descricao"
     t.string   "vice"
+    t.integer  "user_id"
   end
 
   add_index "politicos", ["partido_id"], name: "index_politicos_on_partido_id"
+  add_index "politicos", ["user_id"], name: "index_politicos_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

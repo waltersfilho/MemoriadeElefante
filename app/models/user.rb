@@ -19,15 +19,6 @@ class User < ActiveRecord::Base
   
   has_many :politicos, dependent: :destroy
   has_many :comentarios, through: :politicos
-  
-  def self.new_with_session(params, session)
-  super.tap do |user|
-    if omniauth = session["devise.facebook_data"]
-      user.email = omniauth.info.email
-      user.name = omniauth.info.name
-      user.photo = omniauth.info.image
-    end
-  end
-end
+
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524155743) do
+ActiveRecord::Schema.define(version: 20160525194732) do
 
   create_table "acontecimentos", force: :cascade do |t|
     t.string   "titulo"
@@ -28,6 +28,14 @@ ActiveRecord::Schema.define(version: 20160524155743) do
   end
 
   add_index "acontecimentos", ["politico_id"], name: "index_acontecimentos_on_politico_id"
+
+  create_table "cargos", force: :cascade do |t|
+    t.string   "nome"
+    t.float    "salario"
+    t.string   "funcao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comentarios", force: :cascade do |t|
     t.string   "mensagem"
@@ -61,8 +69,6 @@ ActiveRecord::Schema.define(version: 20160524155743) do
     t.string   "cidade"
     t.string   "municipio"
     t.integer  "partido_id"
-    t.string   "cargo_eleito"
-    t.string   "cargo_atual"
     t.string   "status"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -73,8 +79,10 @@ ActiveRecord::Schema.define(version: 20160524155743) do
     t.string   "descricao"
     t.string   "vice"
     t.integer  "user_id"
+    t.integer  "cargo_id"
   end
 
+  add_index "politicos", ["cargo_id"], name: "index_politicos_on_cargo_id"
   add_index "politicos", ["partido_id"], name: "index_politicos_on_partido_id"
   add_index "politicos", ["user_id"], name: "index_politicos_on_user_id"
 

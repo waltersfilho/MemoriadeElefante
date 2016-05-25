@@ -2,10 +2,10 @@
 <%titulo = "" %>
 <% titulo = @politico.nome %>
 <% @title=titulo %>
- <% if @politico.cargo_eleito.downcase == "presidente" || @politico.cargo_eleito.downcase == "vice-presidente" %>
+ <% if @politico.cargo_id == 1 %>
    <header id="header" class="section-parallax parallaxBg" style="background-image: url(/img/palacio-do-planalto-21.jpg);">
  <% else %>
-   <% if @politico.cargo_eleito.downcase == "governador" %>
+   <% if @politico.cargo_id == 2 %>
      <% if @politico.estado.downcase == "rj" %>
        <header id="header" class="section-parallax parallaxBg" style="background-image: url(/img/guanabara.jpg);">
        <%else if @politico.estado.downcase == "sp" %>
@@ -32,7 +32,7 @@
                       <div class="col-sm-12 col-md-7 padd">
                       	<h5><%= @politico.nome %></h5>
                           <div class="line"></div>
-                          <% if @politico.cargo_eleito.downcase != "vice-presidente" %>
+                          <% if @politico.cargo_id != 2 %>
                             <em> Vice: <%= @politico.vice %></em>
                           <% end %>
       					          <p> <%= @politico.descricao %></p>

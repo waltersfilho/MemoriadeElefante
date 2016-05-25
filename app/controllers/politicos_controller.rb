@@ -90,21 +90,29 @@ class PoliticosController < ApplicationController
         redirect_to root_path
       end
     end
+    def set_cargo
+      @cargo = Cargo.where(nome: params[:nome]).first
+    end
     def set_politico
-      if (params[:cargo_atual] && params[:estado])  
-          @politico = Politico.where(:cargo_eleito=>params[:cargo_atual]).where(:estado=>params[:estado]).first
-        else
-        if (params[:cargo_atual])
-          @politico = Politico.where(cargo_atual: params[:cargo_atual]).first
-        else
-          @politico = Politico.find(params[:id])
+      set_cargo
+      if !@cargo.nil?
+        id = 0
+        id = @cargo.id.to_i
+        if (@cargo.id && params[:estado])  
+            @politico = Politico.find_by_sql(["SELECT * FROM politicos where cargo_id = ? and estado = ?", id, params[:estado]]).first
+          else
+          if (@cargo.nome)
+              @politico = Politico.find_by_sql(["SELECT * FROM politicos where cargo_id = ?", id]).first
+          end
         end
+      else
+          @politico = Politico.find(params[:id])
       end
     end
 
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def politico_params
-      params.require(:politico).permit(:nome, :idade, :estado, :cidade, :municipio, :partido_id, :cargo_eleito, :cargo_atual, :status, :photo, :user_id)
+      params.require(:politico).permit(:nome, :idade, :estado, :cidade, :municipio, :partido_id, :cargo_id, :status, :photo, :user_id)
     end
 end

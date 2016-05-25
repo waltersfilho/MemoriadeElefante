@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :comentarios
+  resources :cargos
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"  }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  root to: "politicos#home"
+  root to: "pages#home"
 
 
   resources :politicos do
@@ -25,12 +25,12 @@ Rails.application.routes.draw do
   end
   
   resources :partidos
-
-  get '/politicos/cargos/:cargo_atual' => 'politicos#show'
-  get '/politicos/cargos/:cargo_atual/:estado' => 'politicos#show'
+  
+  get '/politicos/cargos/:nome' => 'politicos#show'
+  get '/politicos/cargos/:nome/:estado' => 'politicos#show'
   get '/politicos/:id' => 'politicos#show'
   
-  get 'mapa'=> 'politicos#mapa'
+  get 'mapa'=> 'pages#mapa'
 
 
 

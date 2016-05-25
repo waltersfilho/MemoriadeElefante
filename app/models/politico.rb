@@ -1,6 +1,7 @@
 class Politico < ActiveRecord::Base
   belongs_to :partido
   belongs_to :user
+  belongs_to :cargo
   has_many :comentarios
   has_many :acontecimentos
   has_attached_file :photo, styles: { medium: "600x400>", thumb: "150x100>" }, default_url: "/images/:style/missing.png"

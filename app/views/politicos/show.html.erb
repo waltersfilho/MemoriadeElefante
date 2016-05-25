@@ -2,18 +2,21 @@
 <%titulo = "" %>
 <% titulo = @politico.nome %>
 <% @title=titulo %>
- <% if @politico.cargo_id == 1 %>
-   <header id="header" class="section-parallax parallaxBg" style="background-image: url(/img/palacio-do-planalto-21.jpg);">
- <% else %>
-   <% if @politico.cargo_id == 2 %>
-     <% if @politico.estado.downcase == "rj" %>
-       <header id="header" class="section-parallax parallaxBg" style="background-image: url(/img/guanabara.jpg);">
-       <%else if @politico.estado.downcase == "sp" %>
+<% case @politico.cargo_id
+     when 1 %>
+      <header id="header" class="section-parallax parallaxBg" style="background-image: url(/img/palacio-do-planalto-21.jpg);">
+     <% when 2   
+       case @politico.estado.downcase
+         when "rj" %>
+           <header id="header" class="section-parallax parallaxBg" style="background-image: url(/img/guanabara.jpg);">
+         <% when "sp" %>
+           <header id="header" class="section-parallax parallaxBg" style="background-image: url(/img/bandeirantes.jpg);">
+       <% else %>
          <header id="header" class="section-parallax parallaxBg" style="background-image: url(/img/bandeirantes.jpg);">
        <% end %>
-     <% end %>
-   <% end %>
- <% end %>
+<% else %>
+  <header id="header" class="section-parallax parallaxBg" style="background-image: url(/img/bandeirantes.jpg);">
+<% end %>
     	<div class="layer"></div>
         <div class="container parallax-content text-center">
         	<section class="home section-parallax parallaxBg">

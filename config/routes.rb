@@ -35,6 +35,12 @@ Rails.application.routes.draw do
   get '/politicos/:id' => 'politicos#show'
   
   get 'mapa'=> 'pages#mapa'
+  get 'not_found'=> 'pages#not_found'
+  
+  get '401'=> 'pages#not_found'
+  get '404'=> 'pages#not_found'
+  get '422'=> 'pages#not_found'
+  get '500'=> 'pages#not_found'
 
 
 

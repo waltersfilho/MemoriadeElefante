@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
   def set_global_search_variable
     @q = Politico.search(params[:q])
   end
+  
+  def access_denied(exception)
+    redirect_to root_path, alert: exception.message
+  end
+  
+  def authenticate_admin!
+    redirect_to new_user_session_path unless current_user.is_admin?
+  end
 
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?

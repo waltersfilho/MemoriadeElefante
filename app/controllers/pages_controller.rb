@@ -6,5 +6,9 @@ class PagesController < ApplicationController
     def mapa
         render "mapa"
     end
+    
+    def unauthorized
+        render "not_found"
+    end
 
 end

@@ -46,6 +46,12 @@
       <!-- /Home Menu -->
 
       <li class="nav"><a href="/partidos"> Partidos </a></li>
+      <li class="zm-search zm-right-item">
+        <%= search_form_for @q, url: search_politicos_path, html: { method: :post } do |f| %>
+          <%= f.search_field :nome_cont, id:"search-1", type:"text", class:'input-medium search-query' %>
+          <label for="search-1" class="fa fa-search"></label>
+        <% end %>
+      </li>
 
       <% if user_signed_in? %>
         <li class="round-image-50 zm-right-item"><%= image_tag(current_user.photo.url(:thumb))%>

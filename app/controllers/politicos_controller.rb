@@ -22,7 +22,7 @@ class PoliticosController < ApplicationController
   end
   
   def search
-    set_politico
+    busca
     render :show
   end
 
@@ -31,6 +31,11 @@ class PoliticosController < ApplicationController
   def index
     @q = Politico.search(params[:q])
     @politicos = @q.result(distinct: true)
+  end
+  
+  def busca
+    @q = Politico.search(params[:q])
+    @politico = @q.result(distinct: true).first
   end
 
   # GET /politicos/1
@@ -101,22 +106,18 @@ class PoliticosController < ApplicationController
     end
     def set_politico
       set_cargo
-      @q = Politico.search(params[:q])
-      @politico = @q.result(distinct: true).first
-      if @q.nil?
-        if !@cargo.nil?
-          id = 0
-          id = @cargo.id.to_i
-          if (@cargo.id && params[:estado])  
-              @politico = Politico.find_by_sql(["SELECT * FROM politicos where cargo_id = ? and estado = ?", id, params[:estado]]).first
-            else
-            if (@cargo.nome)
-                @politico = Politico.find_by_sql(["SELECT * FROM politicos where cargo_id = ?", id]).first
-            end
+      if !@cargo.nil?
+        id = 0
+        id = @cargo.id.to_i
+        if (@cargo.id && params[:estado])  
+            @politico = Politico.find_by_sql(["SELECT * FROM politicos where cargo_id = ? and estado = ?", id, params[:estado]]).first
+          else
+          if (@cargo.nome)
+              @politico = Politico.find_by_sql(["SELECT * FROM politicos where cargo_id = ?", id]).first
           end
-        else
-            @politico = Politico.find(params[:id])
         end
+      else
+          @politico = Politico.find(params[:id])
       end
     end
 

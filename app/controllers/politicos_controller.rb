@@ -20,11 +20,17 @@ class PoliticosController < ApplicationController
     @politico.downvote_from current_user
     redirect_to :back
   end
+  
+  def search
+    set_politico
+    render :show
+  end
 
   # GET /politicos
   # GET /politicos.json
   def index
-    @politicos = Politico.all
+    @q = Politico.search(params[:q])
+    @politicos = @q.result(distinct: true)
   end
 
   # GET /politicos/1
@@ -95,18 +101,22 @@ class PoliticosController < ApplicationController
     end
     def set_politico
       set_cargo
-      if !@cargo.nil?
-        id = 0
-        id = @cargo.id.to_i
-        if (@cargo.id && params[:estado])  
-            @politico = Politico.find_by_sql(["SELECT * FROM politicos where cargo_id = ? and estado = ?", id, params[:estado]]).first
-          else
-          if (@cargo.nome)
-              @politico = Politico.find_by_sql(["SELECT * FROM politicos where cargo_id = ?", id]).first
+      @q = Politico.search(params[:q])
+      @politico = @q.result(distinct: true).first
+      if @q.nil?
+        if !@cargo.nil?
+          id = 0
+          id = @cargo.id.to_i
+          if (@cargo.id && params[:estado])  
+              @politico = Politico.find_by_sql(["SELECT * FROM politicos where cargo_id = ? and estado = ?", id, params[:estado]]).first
+            else
+            if (@cargo.nome)
+                @politico = Politico.find_by_sql(["SELECT * FROM politicos where cargo_id = ?", id]).first
+            end
           end
+        else
+            @politico = Politico.find(params[:id])
         end
-      else
-          @politico = Politico.find(params[:id])
       end
     end
 

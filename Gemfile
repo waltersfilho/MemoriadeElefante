@@ -24,6 +24,10 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Gem de Like/Dislike
 gem 'acts_as_votable', '~> 0.10.0'
 
+gem "kaminari"
+
+gem 'ransack'
+
 
 #Gems do Omniauth
 gem 'omniauth'

@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
 
   resources :politicos do
+      collection do
+        match 'search' => 'politicos#search', via: [:get, :post], as: :search
+      end
       member do
         put "like", to: "politicos#upvote"
         put "dislike", to: "politicos#downvote"

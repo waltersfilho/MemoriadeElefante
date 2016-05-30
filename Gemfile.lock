@@ -284,6 +284,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  kaminari
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
@@ -291,6 +292,7 @@ DEPENDENCIES
   paperclip (~> 5.0.0.beta1)
   progress_job
   rails (= 4.2.6)
+  ransack
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   social-share-button

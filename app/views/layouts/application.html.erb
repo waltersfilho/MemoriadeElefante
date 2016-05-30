@@ -31,7 +31,7 @@
       <li class="nav"><%= link_to 'Home', root_path %></li>
       <li class="nav"><%= link_to 'Mapa Político', mapa_path %></li>
 
-      <li class=><a href="/cargos">Cargos</a>
+      <li class="nav"><a href="/cargos">Cargos</a>
         <ul class="w-200">
           <li class="zm-active"><a href="/politicos/cargos/presidente">Presidente</a></li>
           <li><a href="#">Governadores</a></li>
@@ -46,6 +46,12 @@
       <!-- /Home Menu -->
 
       <li class="nav"><%= link_to 'Partidos', partidos_path %></li>
+      <li class="zm-search zm-right-item">
+        <%= search_form_for @q, url: search_politicos_path, html: { method: :post } do |f| %>
+          <%= f.search_field :nome_cont, id:"search-1", type:"text", class:'input-medium search-query' %>
+          <label for="search-1" class="fa fa-search"></label>
+        <% end %>
+      </li>
 
       <% if user_signed_in? %>
         <li class="round-image-50 zm-right-item"><%= image_tag(current_user.photo.url(:thumb))%></li>
@@ -54,8 +60,6 @@
       <% else %>
           <li class="btn pi-btn-default btn-primary zm-right-item"><a href="/users/sign_in"> Login </a></li>
       <%end%>
-
-
     </ul>
     <!-- /Zetta Menu 1 -->
   </div><!-- /.container-fluid -->

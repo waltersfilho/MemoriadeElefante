@@ -1,4 +1,5 @@
 class Politico < ActiveRecord::Base
+  paginates_per 10
   belongs_to :partido
   belongs_to :user
   belongs_to :cargo

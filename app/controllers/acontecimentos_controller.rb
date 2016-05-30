@@ -13,6 +13,7 @@ class AcontecimentosController < ApplicationController
   def upvote
     @acontecimento.upvote_by current_user
     redirect_to :back
+end
   end
   def downvote
     @acontecimento.downvote_from current_user

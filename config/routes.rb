@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :cargos
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"  }
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: "pages#home"
 
 

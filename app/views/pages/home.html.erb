@@ -48,9 +48,6 @@
       <li class="nav"><a href="/partidos"> Partidos </a></li>
 
       <% if user_signed_in? %>
-        <% if current_user.admin? %>
-          <li class="nav zm-right-item"><%= link_to "Admin Panel", rails_admin_path %></li>
-        <% end %>
         <li class="round-image-50 zm-right-item"><%= image_tag(current_user.photo.url(:thumb))%>
         <li class="nav zm-right-item"><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
         <li class="nav zm-right-item"><%= link_to 'Editar', edit_user_registration_path %> </li>

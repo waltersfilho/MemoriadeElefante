@@ -1,2 +1,3 @@
 ---
 BUNDLE_NO_INSTALL: false
+BUNDLE_WITHOUT: production

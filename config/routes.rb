@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  match '/contacts',     to: 'contacts#new', via: 'get'
+  resources "contacts", only: [:new, :create]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :cargos
@@ -41,6 +43,7 @@ Rails.application.routes.draw do
   get '404'=> 'pages#not_found'
   get '422'=> 'pages#not_found'
   get '500'=> 'pages#not_found'
+  
 
 
 
